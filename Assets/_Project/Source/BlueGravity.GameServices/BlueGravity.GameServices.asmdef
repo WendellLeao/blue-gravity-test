@@ -1,9 +1,8 @@
 {
-    "name": "BlueGravity.Input",
-    "rootNamespace": "BlueGravity.Input",
+    "name": "BlueGravity.GameServices",
+    "rootNamespace": "BlueGravity.GameServices",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:9dddf910ca970b049ba89477479dde1e"
+        "GUID:398b5996024baac43a96d67a0b47e85a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

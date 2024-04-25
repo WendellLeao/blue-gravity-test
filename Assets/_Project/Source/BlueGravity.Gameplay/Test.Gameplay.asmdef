@@ -2,7 +2,9 @@
     "name": "BlueGravity.Gameplay",
     "rootNamespace": "BlueGravity.Gameplay",
     "references": [
-        "GUID:398b5996024baac43a96d67a0b47e85a"
+        "GUID:398b5996024baac43a96d67a0b47e85a",
+        "GUID:9dddf910ca970b049ba89477479dde1e",
+        "GUID:ade0cd5779dca3e44bfea474f127939e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
