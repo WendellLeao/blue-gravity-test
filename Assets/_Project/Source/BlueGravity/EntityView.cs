@@ -13,6 +13,8 @@ namespace BlueGravity
                 return;
             }
             
+            _isEnabled = true;
+            
             OnSetup();
         }
 
@@ -22,6 +24,8 @@ namespace BlueGravity
             {
                 return;
             }
+            
+            _isEnabled = false;
             
             OnDispose();
         }

@@ -105,6 +105,61 @@ namespace BlueGravity.Input
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""2c1655ea-afbe-472b-baba-02f29cea812f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""2562b3f8-84ab-4f63-9f5c-d383a15bb8f9"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""bbb741e0-16c2-4ac0-9ffa-77baf5d9c0f4"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""eddb5677-ac2c-4837-b818-65c14aa5b912"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""be357959-916a-4dad-82aa-9bf50f720da4"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""ae9cc857-2f25-4545-ad4c-a59a5f362cac"",
                     ""path"": ""<Keyboard>/e"",

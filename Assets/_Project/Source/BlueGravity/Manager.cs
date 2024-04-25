@@ -14,6 +14,8 @@ namespace BlueGravity
                 return;
             }
             
+            _hasInitialized = true;
+            
             OnInitialize();
         }
 
@@ -23,6 +25,8 @@ namespace BlueGravity
             {
                 return;
             }
+            
+            _hasInitialized = false;
             
             OnDispose();
         }

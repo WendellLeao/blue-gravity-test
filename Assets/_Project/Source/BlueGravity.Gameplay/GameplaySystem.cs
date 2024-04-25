@@ -14,5 +14,26 @@ namespace BlueGravity.Gameplay
             
             _characterManager.Initialize();
         }
+
+        protected override void OnDispose()
+        {
+            base.OnDispose();
+            
+            _characterManager.Dispose();
+        }
+
+        protected override void OnTick(float deltaTime)
+        {
+            base.OnTick(deltaTime);
+            
+            _characterManager.Tick(deltaTime);
+        }
+
+        protected override void OnFixedTick(float fixedDeltaTime)
+        {
+            base.OnFixedTick(fixedDeltaTime);
+
+            _characterManager.FixedTick(fixedDeltaTime);
+        }
     }
 }
