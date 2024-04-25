@@ -1,6 +1,6 @@
 {
-    "name": "Test",
-    "rootNamespace": "Test",
+    "name": "BlueGravity.Core",
+    "rootNamespace": "BlueGravity.Core",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

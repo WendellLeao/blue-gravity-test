@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Test
+namespace BlueGravity
 {
-    public abstract class Entity : MonoBehaviour
+    public abstract class EntityComponent : MonoBehaviour
     {
         private bool _isEnabled;
 

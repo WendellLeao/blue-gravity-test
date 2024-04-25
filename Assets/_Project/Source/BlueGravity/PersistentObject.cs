@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Test
+namespace BlueGravity
 {
     public sealed class PersistentObject : MonoBehaviour
     {

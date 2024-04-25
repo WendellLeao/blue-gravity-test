@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Test
+namespace BlueGravity
 {
     public partial class @Input : IInputActionCollection2, IDisposable
     {

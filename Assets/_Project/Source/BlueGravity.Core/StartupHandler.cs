@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Test.Core
+namespace BlueGravity.Core
 {
     public sealed class StartupHandler : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-using Test.Gameplay.Playing;
+using BlueGravity.Gameplay.Playing;
 using UnityEngine;
 
-namespace Test.Gameplay
+namespace BlueGravity.Gameplay
 {
     public sealed class GameplaySystem : System
     {

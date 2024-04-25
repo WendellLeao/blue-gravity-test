@@ -1,9 +1,7 @@
 {
-    "name": "Test.Gameplay",
-    "rootNamespace": "Test.Gameplay",
-    "references": [
-        "GUID:398b5996024baac43a96d67a0b47e85a"
-    ],
+    "name": "BlueGravity",
+    "rootNamespace": "BlueGravity",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

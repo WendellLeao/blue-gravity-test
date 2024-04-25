@@ -1,34 +1,35 @@
 using UnityEngine;
 
-namespace Test
+namespace BlueGravity
 {
-    public abstract class EntityComponent : MonoBehaviour
+    [DisallowMultipleComponent]
+    public abstract class Manager : MonoBehaviour
     {
-        private bool _isEnabled;
+        private bool _hasInitialized;
 
-        public void Begin()
+        public void Initialize()
         {
-            if (_isEnabled)
+            if (_hasInitialized)
             {
                 return;
             }
             
-            OnBegin();
+            OnInitialize();
         }
 
-        public void Stop()
+        public void Dispose()
         {
-            if (!_isEnabled)
+            if (!_hasInitialized)
             {
                 return;
             }
             
-            OnStop();
+            OnDispose();
         }
 
         public void Tick(float deltaTime)
         {
-            if (!_isEnabled)
+            if (!_hasInitialized)
             {
                 return;
             }
@@ -38,7 +39,7 @@ namespace Test
 
         public void FixedTick(float deltaTime)
         {
-            if (!_isEnabled)
+            if (!_hasInitialized)
             {
                 return;
             }
@@ -46,10 +47,10 @@ namespace Test
             OnFixedTick(deltaTime);
         }
 
-        protected virtual void OnBegin()
+        protected virtual void OnInitialize()
         { }
         
-        protected virtual void OnStop()
+        protected virtual void OnDispose()
         { }
         
         protected virtual void OnTick(float deltaTime)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Test.Gameplay.Playing
+namespace BlueGravity.Gameplay.Playing
 {
     public sealed class Character : Entity
     {
