@@ -5,35 +5,35 @@ namespace BlueGravity
     [DisallowMultipleComponent]
     public abstract class Manager : MonoBehaviour
     {
-        private bool _hasInitialized;
+        private bool _isInitialized;
 
         public void Initialize()
         {
-            if (_hasInitialized)
+            if (_isInitialized)
             {
                 return;
             }
             
-            _hasInitialized = true;
+            _isInitialized = true;
             
             OnInitialize();
         }
 
         public void Dispose()
         {
-            if (!_hasInitialized)
+            if (!_isInitialized)
             {
                 return;
             }
             
-            _hasInitialized = false;
+            _isInitialized = false;
             
             OnDispose();
         }
 
         public void Tick(float deltaTime)
         {
-            if (!_hasInitialized)
+            if (!_isInitialized)
             {
                 return;
             }
@@ -43,7 +43,7 @@ namespace BlueGravity
 
         public void FixedTick(float deltaTime)
         {
-            if (!_hasInitialized)
+            if (!_isInitialized)
             {
                 return;
             }
