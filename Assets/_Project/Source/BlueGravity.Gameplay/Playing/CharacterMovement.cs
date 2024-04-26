@@ -11,7 +11,7 @@ namespace BlueGravity.Gameplay.Playing
         private IInputService _inputService;
         private ICharacterView _characterView;
         private Rigidbody2D _rigidBody;
-        private Vector2 _movement;
+        private Vector2 _normalizedMovement;
 
         public void Begin(IInputService inputService, ICharacterView characterView, Rigidbody2D rigidBody)
         {
@@ -43,18 +43,14 @@ namespace BlueGravity.Gameplay.Playing
 
         private void HandleReadInputs(InputsData inputsData)
         {
-            _movement = inputsData.Movement;
+            _normalizedMovement = inputsData.Movement.normalized;
         }
         
         private void HandleVelocity()
         {
-            _movement.Normalize();
-
-            bool isFacingRight = _movement.x >= 0f;
+            _characterView.SetNormalizedMovement(_normalizedMovement);
             
-            _characterView.SetIsFacingRight(isFacingRight);
-            
-            _rigidBody.velocity = _movement * _movementSpeed;
+            _rigidBody.velocity = _normalizedMovement * _movementSpeed;
         }
     }
 }

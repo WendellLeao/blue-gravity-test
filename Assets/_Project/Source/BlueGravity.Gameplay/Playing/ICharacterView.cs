@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace BlueGravity.Gameplay.Playing
 {
     public interface ICharacterView
     {
-        public void SetIsFacingRight(bool isFacingRight);
+        public void SetNormalizedMovement(Vector2 movement);
     }
 }
