@@ -1,3 +1,4 @@
+using BlueGravity.GameServices;
 using UnityEngine;
 
 namespace BlueGravity.UI
@@ -7,11 +8,17 @@ namespace BlueGravity.UI
         [SerializeField]
         private ScreensManager _screensManager;
 
+        private IScreenService _screenService;
+
         protected override void OnInitialize()
         {
             base.OnInitialize();
             
+            _screenService = ServiceLocator.GetService<IScreenService>();
+
             _screensManager.Initialize();
+
+            OpenTestScreen();
         }
 
         protected override void OnDispose()
@@ -19,6 +26,11 @@ namespace BlueGravity.UI
             base.OnDispose();
             
             _screensManager.Dispose();
+        }
+        
+        private void OpenTestScreen()
+        {
+            _screenService.OpenScreen<TestScreen>();
         }
     }
 }

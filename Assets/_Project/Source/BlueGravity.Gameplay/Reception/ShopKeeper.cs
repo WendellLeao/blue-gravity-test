@@ -1,10 +1,17 @@
 using BlueGravity.Gameplay.Interaction;
 using UnityEngine;
 
-namespace BlueGravity.Gameplay
+namespace BlueGravity.Gameplay.Reception
 {
     public sealed class ShopKeeper : Interactable
     {
+        protected override void OnBegin()
+        {
+            base.OnBegin();
+
+            Debug.Log("Hi there! Wanna buy something cool?");
+        }
+
         protected override void OnInteract()
         {
             base.OnInteract();

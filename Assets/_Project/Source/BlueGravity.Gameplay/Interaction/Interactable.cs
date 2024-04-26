@@ -1,8 +1,6 @@
-using UnityEngine;
-
 namespace BlueGravity.Gameplay.Interaction
 {
-    public abstract class Interactable : MonoBehaviour, IInteractable
+    public abstract class Interactable : Entity, IInteractable
     {
         private bool _isAvailable = true;
         

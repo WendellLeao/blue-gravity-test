@@ -1,4 +1,5 @@
 using BlueGravity.Gameplay.Playing;
+using BlueGravity.Gameplay.Reception;
 using UnityEngine;
 
 namespace BlueGravity.Gameplay
@@ -7,12 +8,15 @@ namespace BlueGravity.Gameplay
     {
         [SerializeField]
         private CharacterManager _characterManager;
+        [SerializeField]
+        private ShopKeeperManager _shopKeeperManager;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
             
             _characterManager.Initialize();
+            _shopKeeperManager.Initialize();
         }
 
         protected override void OnDispose()
@@ -20,6 +24,7 @@ namespace BlueGravity.Gameplay
             base.OnDispose();
             
             _characterManager.Dispose();
+            _shopKeeperManager.Dispose();
         }
 
         protected override void OnTick(float deltaTime)
