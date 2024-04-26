@@ -1,3 +1,4 @@
+using BlueGravity.Cameras;
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.GameServices;
@@ -14,12 +15,14 @@ namespace BlueGravity.UI.Screens
         private Vector3 _promptTextOffset;
 
         private IEventService _eventService;
+        private ICameraService _cameraService;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
 
             _eventService = ServiceLocator.GetService<IEventService>();
+            _cameraService = ServiceLocator.GetService<ICameraService>();
             
             SetPromptTextActive(false);
         }
@@ -75,8 +78,8 @@ namespace BlueGravity.UI.Screens
         {
             Transform promptTransform = _promptText.transform;
 
-            // TODO: fix this camera call
-            Vector3 targetScreenPosition = Camera.main.WorldToScreenPoint(targetTransform.position);
+            Camera mainCamera = _cameraService.MainCamera;
+            Vector3 targetScreenPosition = mainCamera.WorldToScreenPoint(targetTransform.position);
             
             Vector3 newPosition = new Vector3(
                 targetScreenPosition.x + _promptTextOffset.x, 
