@@ -17,6 +17,7 @@ namespace BlueGravity.Input
         
         [Header("Inputs States")]
         private Vector2 _movement;
+        private bool _pressInteract;
 
         public override void RegisterService()
         {
@@ -53,6 +54,8 @@ namespace BlueGravity.Input
             UpdateInputsData();
             
             OnReadInputs?.Invoke(_inputsData);
+
+            ResetInputs();
         }
 
         private void InitializeInputs()
@@ -67,11 +70,17 @@ namespace BlueGravity.Input
         private void SubscribeEvents()
         {
             _landMapActions.Movement.performed += HandleMovementPerformed;
+
+            _landMapActions.Interact.performed += HandleInteractPerformed;
+            _landMapActions.Interact.canceled += HandleInteractCanceled;
         }
         
         private void UnsubscribeEvents()
         {
             _landMapActions.Movement.performed -= HandleMovementPerformed;
+            
+            _landMapActions.Interact.performed -= HandleInteractPerformed;
+            _landMapActions.Interact.canceled -= HandleInteractCanceled;
         }
 
         private void HandleMovementPerformed(InputAction.CallbackContext context)
@@ -79,9 +88,25 @@ namespace BlueGravity.Input
             _movement = context.ReadValue<Vector2>();
         }
 
+        private void HandleInteractPerformed(InputAction.CallbackContext context)
+        {
+            _pressInteract = true;
+        }
+        
+        private void HandleInteractCanceled(InputAction.CallbackContext context)
+        {
+            _pressInteract = false;
+        }
+        
         private void UpdateInputsData()
         {
             _inputsData.Movement = _movement;
+            _inputsData.PressInteract = _pressInteract;
+        }
+
+        private void ResetInputs()
+        {
+            _pressInteract = false;
         }
     }
 }

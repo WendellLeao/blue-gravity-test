@@ -226,6 +226,8 @@ GameObject:
   - component: {fileID: 6660380855939762196}
   - component: {fileID: 2803298033367666545}
   - component: {fileID: 2482714249737322088}
+  - component: {fileID: 6598223014524282468}
+  - component: {fileID: 1974537731719158978}
   - component: {fileID: 7224281368764059796}
   - component: {fileID: 2121558457681930924}
   m_Layer: 0
@@ -264,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterMovement: {fileID: 2482714249737322088}
+  _characterInteraction: {fileID: 6598223014524282468}
+  _interactionArea: {fileID: 1974537731719158978}
   _rigidBody: {fileID: 7224281368764059796}
   _characterView: {fileID: 785972343080886652}
 --- !u!114 &2482714249737322088
@@ -279,6 +283,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 9
+--- !u!114 &6598223014524282468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660380855939762199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0bfa68a713436d941d5962e9e7f4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1974537731719158978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660380855939762199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b592cc3ada8b3149b2d732407d46cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointTransform: {fileID: 5306480193089129523}
+  _interactionRadius: 2
 --- !u!50 &7224281368764059796
 Rigidbody2D:
   serializedVersion: 4

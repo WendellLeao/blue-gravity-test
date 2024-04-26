@@ -1,3 +1,4 @@
+using BlueGravity.Gameplay.Interaction;
 using BlueGravity.GameServices;
 using BlueGravity.Input;
 using UnityEngine;
@@ -8,6 +9,10 @@ namespace BlueGravity.Gameplay.Playing
     {
         [SerializeField]
         private CharacterMovement _characterMovement;
+        [SerializeField]
+        private CharacterInteraction _characterInteraction;
+        [SerializeField]
+        private InteractionArea _interactionArea;
         [SerializeField]
         private Rigidbody2D _rigidBody;
         [SerializeField]
@@ -20,6 +25,7 @@ namespace BlueGravity.Gameplay.Playing
             IInputService inputService = ServiceLocator.GetService<IInputService>();
             
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
+            _characterInteraction.Begin(inputService, _interactionArea);
             
             _characterView.Setup();
         }
