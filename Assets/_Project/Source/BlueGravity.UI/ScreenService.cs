@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using BlueGravity.GameServices;
 using BlueGravity.Utilities.Extensions;
 using UnityEngine;
@@ -11,12 +10,12 @@ namespace BlueGravity.UI
         private readonly List<IUIScreen> _registeredScreens = new();
         private readonly List<IUIScreen> _openedScreens = new();
 
-        public override void RegisterService()
+        protected override void RegisterService()
         {
             ServiceLocator.RegisterService<IScreenService>(this);
         }
 
-        public override void UnregisterService()
+        protected override void UnregisterService()
         {
             ServiceLocator.UnregisterService<IScreenService>();
         }

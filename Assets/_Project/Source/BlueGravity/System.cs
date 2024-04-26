@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace BlueGravity
 {
+    [DisallowMultipleComponent]
     public abstract class System : MonoBehaviour
     {
         protected virtual void OnInitialize()

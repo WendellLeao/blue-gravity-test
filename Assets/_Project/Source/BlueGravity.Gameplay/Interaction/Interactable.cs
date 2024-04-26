@@ -1,6 +1,6 @@
 namespace BlueGravity.Gameplay.Interaction
 {
-    public abstract class Interactable : Entity, IInteractable
+    public abstract class Interactable : EntityComponent, IInteractable
     {
         private bool _isAvailable = true;
         

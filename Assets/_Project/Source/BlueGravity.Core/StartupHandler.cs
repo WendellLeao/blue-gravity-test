@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace BlueGravity.Core
 {
+    [DisallowMultipleComponent]
     public sealed class StartupHandler : MonoBehaviour
     {
         private void Start()

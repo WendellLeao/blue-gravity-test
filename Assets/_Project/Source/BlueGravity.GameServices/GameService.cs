@@ -2,11 +2,12 @@ using UnityEngine;
 
 namespace BlueGravity.GameServices
 {
+    [DisallowMultipleComponent]
     public abstract class GameService : MonoBehaviour
     {
-        public abstract void RegisterService();
+        protected abstract void RegisterService();
 
-        public abstract void UnregisterService();
+        protected abstract void UnregisterService();
 
         public void Initialize()
         {

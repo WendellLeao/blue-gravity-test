@@ -43,18 +43,32 @@ namespace BlueGravity.UI
 
         public void Open()
         {
+            if (_isOpened)
+            {
+                return;
+            }
+            
             SetIsOpened(true);
+         
+            SubscribeEvents();
             
             OnOpen();
         }
 
         public void Close()
         {
+            if (!_isOpened)
+            {
+                return;
+            }
+            
             SetIsOpened(false);
+            
+            UnsubscribeEvents();
             
             OnClose();
         }
-
+        
         public void Show()
         {
             OnShow();
@@ -71,6 +85,12 @@ namespace BlueGravity.UI
         protected virtual void OnDispose()
         { }
         
+        protected virtual void OnSubscribeEvents()
+        { }
+        
+        protected virtual void OnUnsubscribeEvents()
+        { }
+        
         protected virtual void OnOpen()
         { }
         
@@ -82,6 +102,16 @@ namespace BlueGravity.UI
         
         protected virtual void OnHide()
         { }
+
+        private void SubscribeEvents()
+        {
+            OnSubscribeEvents();
+        }
+
+        private void UnsubscribeEvents()
+        {
+            OnUnsubscribeEvents();
+        }
 
         private void SetIsOpened(bool isOpened)
         {

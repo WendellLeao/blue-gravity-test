@@ -1,29 +1,24 @@
-using BlueGravity.Gameplay.Interaction;
 using UnityEngine;
 
 namespace BlueGravity.Gameplay.Reception
 {
-    public sealed class ShopKeeper : Interactable
+    public sealed class ShopKeeper : Entity
     {
+        [SerializeField]
+        private ShopKeeperInteraction _shopKeeperInteraction;
+        
         protected override void OnBegin()
         {
             base.OnBegin();
 
-            Debug.Log("Hi there! Wanna buy something cool?");
+            _shopKeeperInteraction.Begin();
         }
 
-        protected override void OnInteract()
+        protected override void OnStop()
         {
-            base.OnInteract();
-
-            Debug.Log("Interact ShopKeeper");
-        }
-
-        protected override void OnStopInteract()
-        {
-            base.OnStopInteract();
+            base.OnStop();
             
-            Debug.Log("Stop ShopKeeper Interaction");
+            _shopKeeperInteraction.Stop();
         }
     }
 }

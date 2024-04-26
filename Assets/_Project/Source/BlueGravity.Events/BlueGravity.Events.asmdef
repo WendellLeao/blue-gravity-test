@@ -1,11 +1,8 @@
 {
-    "name": "BlueGravity.Gameplay",
-    "rootNamespace": "BlueGravity.Gameplay",
+    "name": "BlueGravity.Events",
+    "rootNamespace": "BlueGravity.Events",
     "references": [
-        "GUID:398b5996024baac43a96d67a0b47e85a",
-        "GUID:9dddf910ca970b049ba89477479dde1e",
-        "GUID:ade0cd5779dca3e44bfea474f127939e",
-        "GUID:a5777e44e3008bc458bf90f9adbf913c"
+        "GUID:9dddf910ca970b049ba89477479dde1e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

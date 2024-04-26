@@ -1,4 +1,5 @@
 using BlueGravity.GameServices;
+using BlueGravity.UI.Screens;
 using UnityEngine;
 
 namespace BlueGravity.UI
@@ -18,19 +19,15 @@ namespace BlueGravity.UI
 
             _screensManager.Initialize();
 
-            OpenTestScreen();
+            _screenService.OpenScreen<TestScreen>();
+            _screenService.OpenScreen<HUDScreen>();
         }
 
         protected override void OnDispose()
         {
             base.OnDispose();
-            
+
             _screensManager.Dispose();
-        }
-        
-        private void OpenTestScreen()
-        {
-            _screenService.OpenScreen<TestScreen>();
         }
     }
 }

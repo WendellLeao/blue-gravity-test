@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 namespace BlueGravity.Input
 {
-    [DisallowMultipleComponent]
     public sealed class InputService : GameService, IInputService
     {
         public event Action<InputsData> OnReadInputs;
@@ -19,12 +18,12 @@ namespace BlueGravity.Input
         private Vector2 _movement;
         private bool _pressInteract;
 
-        public override void RegisterService()
+        protected override void RegisterService()
         {
             ServiceLocator.RegisterService<IInputService>(this);
         }
 
-        public override void UnregisterService()
+        protected override void UnregisterService()
         {
             ServiceLocator.UnregisterService<InputService>();
         }

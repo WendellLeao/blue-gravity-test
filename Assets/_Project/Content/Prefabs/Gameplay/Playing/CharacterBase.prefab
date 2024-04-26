@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointTransform: {fileID: 5306480193089129523}
-  _interactionRadius: 2
+  _interactionRadius: 3
 --- !u!50 &7224281368764059796
 Rigidbody2D:
   serializedVersion: 4

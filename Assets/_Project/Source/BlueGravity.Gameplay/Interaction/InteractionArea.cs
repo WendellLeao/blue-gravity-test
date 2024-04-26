@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BlueGravity.Gameplay.Interaction
 {
-    public sealed class InteractionArea : MonoBehaviour, IInteractionArea
+    public sealed class InteractionArea : EntityComponent, IInteractionArea
     {
         [SerializeField]
         private Transform _pointTransform;
@@ -11,6 +11,8 @@ namespace BlueGravity.Gameplay.Interaction
 
         private readonly Collider2D[] _colliders = new Collider2D[10];
 
+        public Transform PointTransform => _pointTransform;
+        
         public bool TryGetAvailableInteractableNearby(out IInteractable interactable)
         {
             ClearCollidersArray();

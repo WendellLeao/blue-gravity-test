@@ -1,3 +1,4 @@
+using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.GameServices;
 using BlueGravity.Input;
@@ -23,9 +24,10 @@ namespace BlueGravity.Gameplay.Playing
             base.OnBegin();
 
             IInputService inputService = ServiceLocator.GetService<IInputService>();
+            IEventService eventService = ServiceLocator.GetService<IEventService>();
             
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
-            _characterInteraction.Begin(inputService, _interactionArea);
+            _characterInteraction.Begin(inputService, eventService, _interactionArea);
             
             _characterView.Setup();
         }
@@ -44,6 +46,7 @@ namespace BlueGravity.Gameplay.Playing
             base.OnTick(deltaTime);
 
             _characterMovement.Tick(deltaTime);
+            _characterInteraction.Tick(deltaTime);
         }
 
         protected override void OnFixedTick(float fixedDeltaTime)
