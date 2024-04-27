@@ -19,7 +19,22 @@ namespace BlueGravity.Gameplay.Assembler
             
             base.Begin();
         }
-        
+
+        public void EquipBodyPart(BodyPartData bodyPartData)
+        {
+            for (int i = 0; i < _bodyParts.Length; i++)
+            {
+                BodyPart bodyPart = _bodyParts[i];
+
+                if (bodyPart.CategoryId.Contains(bodyPart.CategoryId))
+                {
+                    bodyPart.SetBodyPartData(bodyPartData);
+                }
+            }
+
+            OverrideAnimatorAnimationClips(bodyPartData);
+        }
+
         protected override void OnBegin()
         {
             base.OnBegin();
@@ -35,10 +50,10 @@ namespace BlueGravity.Gameplay.Assembler
             {
                 BodyPart bodyPart = _bodyParts[i];
 
+                bodyPart.Begin();
+
                 if (_partsCollectionData.TryGetDefaultBodyPartByCategoryId(bodyPart.CategoryId, out BodyPartData data))
                 {
-                    bodyPart.Begin(data);
-                    
                     OverrideAnimatorAnimationClips(data);
                 }
             }
@@ -57,7 +72,7 @@ namespace BlueGravity.Gameplay.Assembler
                 _animatorOverrideController[subClipName] = animationClip;
             }
         }
-        
+
         private string GetSubClipName(string clipName)
         {
             char targetChar = '_';

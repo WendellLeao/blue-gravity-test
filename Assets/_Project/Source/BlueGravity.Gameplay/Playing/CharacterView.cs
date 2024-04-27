@@ -1,3 +1,4 @@
+using BlueGravity.Events;
 using BlueGravity.Gameplay.Assembler;
 using UnityEngine;
 
@@ -14,18 +15,30 @@ namespace BlueGravity.Gameplay.Playing
         private static readonly int HorizontalMovement = Animator.StringToHash("HorizontalMovement");
         private static readonly int VerticalMovement = Animator.StringToHash("VerticalMovement");
 
+        private IEventService _eventService;
         private Vector2 _normalizedMovement;
 
+        public void Setup(IEventService eventService)
+        {
+            _eventService = eventService;
+            
+            base.Setup();
+        }
+        
         protected override void OnSetup()
         {
             base.OnSetup();
 
+            _eventService.AddEventListener<BodyPartBoughtEvent>(HandleBodyPartBoughtEvent);
+            
             _humanoidAssembler.Begin(_animator);
         }
 
         protected override void OnDispose()
         {
             base.OnDispose();
+            
+            _eventService.RemoveEventListener<BodyPartBoughtEvent>(HandleBodyPartBoughtEvent);
             
             _humanoidAssembler.Stop();
         }
@@ -37,6 +50,16 @@ namespace BlueGravity.Gameplay.Playing
             _humanoidAssembler.Tick(deltaTime);
         }
 
+        private void HandleBodyPartBoughtEvent(GameEvent gameEvent)
+        {
+            if (gameEvent is BodyPartBoughtEvent bodyPartBoughtEvent)
+            {
+                BodyPartData bodyPartData = bodyPartBoughtEvent.BodyPartData;
+                
+                _humanoidAssembler.EquipBodyPart(bodyPartData);
+            }
+        }
+        
         public void SetNormalizedMovement(Vector2 movement)
         {
             _normalizedMovement = movement;

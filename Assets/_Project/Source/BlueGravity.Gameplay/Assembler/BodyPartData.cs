@@ -14,6 +14,7 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private bool _isVisible = true;
 
+        public string Id => _id;
         public Sprite DisplaySprite => _displaySprite;
         public AnimationClip[] AnimationClips => _animationClips;
         public bool IsVisible => _isVisible;

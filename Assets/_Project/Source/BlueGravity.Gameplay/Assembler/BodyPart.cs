@@ -13,17 +13,10 @@ namespace BlueGravity.Gameplay.Assembler
 
         public string CategoryId => _categoryData.Id;
 
-        public void Begin(BodyPartData data)
+        public void SetBodyPartData(BodyPartData data)
         {
             _data = data;
             
-            base.Begin();
-        }
-
-        protected override void OnBegin()
-        {
-            base.OnBegin();
-
             _spriteRenderer.enabled = _data.IsVisible;
         }
     }

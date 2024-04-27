@@ -8,6 +8,8 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private BodyPartsGroupData[] _bodyPartsGroups;
 
+        public BodyPartsGroupData[] BodyPartsGroups => _bodyPartsGroups;
+        
         public bool TryGetDefaultBodyPartByCategoryId(string id, out BodyPartData bodyPartData)
         {
             for (int i = 0; i < _bodyPartsGroups.Length; i++)

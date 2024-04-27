@@ -29,7 +29,7 @@ namespace BlueGravity.Gameplay.Playing
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
             _characterInteraction.Begin(inputService, eventService, _interactionArea);
             
-            _characterView.Setup();
+            _characterView.Setup(eventService);
         }
 
         protected override void OnStop()

@@ -1,5 +1,6 @@
 using BlueGravity.Services;
 using BlueGravity.UI.Screens;
+using BlueGravity.UI.Screens.Shop;
 using UnityEngine;
 
 namespace BlueGravity.UI
@@ -20,6 +21,7 @@ namespace BlueGravity.UI
             _screensManager.Initialize();
 
             _screenService.OpenScreen<HUDScreen>();
+            _screenService.OpenScreen<ShopScreen>();
         }
 
         protected override void OnDispose()
