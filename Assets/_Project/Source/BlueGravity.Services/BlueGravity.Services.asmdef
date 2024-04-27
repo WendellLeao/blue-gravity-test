@@ -1,6 +1,6 @@
 {
-    "name": "BlueGravity.GameServices",
-    "rootNamespace": "BlueGravity.GameServices",
+    "name": "BlueGravity.Services",
+    "rootNamespace": "BlueGravity.Services",
     "references": [
         "GUID:398b5996024baac43a96d67a0b47e85a"
     ],

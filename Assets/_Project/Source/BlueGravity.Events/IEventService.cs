@@ -1,4 +1,4 @@
-using BlueGravity.GameServices;
+using BlueGravity.Services;
 using UnityEngine.Events;
 
 namespace BlueGravity.Events

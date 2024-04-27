@@ -1,7 +1,7 @@
 using BlueGravity.Cameras;
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
-using BlueGravity.GameServices;
+using BlueGravity.Services;
 using TMPro;
 using UnityEngine;
 

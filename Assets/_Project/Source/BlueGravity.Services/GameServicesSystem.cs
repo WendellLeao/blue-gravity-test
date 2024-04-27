@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BlueGravity.GameServices
+namespace BlueGravity.Services
 {
     public sealed class GameServicesSystem : System
     {

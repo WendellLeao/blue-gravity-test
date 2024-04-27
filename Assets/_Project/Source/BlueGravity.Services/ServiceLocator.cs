@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace BlueGravity.GameServices
+namespace BlueGravity.Services
 {
     public static class ServiceLocator
     {

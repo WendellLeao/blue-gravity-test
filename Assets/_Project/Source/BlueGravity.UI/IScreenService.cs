@@ -1,4 +1,4 @@
-using BlueGravity.GameServices;
+using BlueGravity.Services;
 
 namespace BlueGravity.UI
 {

@@ -1,4 +1,4 @@
-namespace BlueGravity.GameServices
+namespace BlueGravity.Services
 {
     public interface IGameService
     { }

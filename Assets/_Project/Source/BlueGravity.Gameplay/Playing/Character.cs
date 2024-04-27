@@ -1,7 +1,7 @@
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
-using BlueGravity.GameServices;
 using BlueGravity.Input;
+using BlueGravity.Services;
 using UnityEngine;
 
 namespace BlueGravity.Gameplay.Playing

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BlueGravity.GameServices
+namespace BlueGravity.Services
 {
     [DisallowMultipleComponent]
     public abstract class GameService : MonoBehaviour

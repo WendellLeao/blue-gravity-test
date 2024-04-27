@@ -1,5 +1,5 @@
 using System;
-using BlueGravity.GameServices;
+using BlueGravity.Services;
 
 namespace BlueGravity.Input
 {

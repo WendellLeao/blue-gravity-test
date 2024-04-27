@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using BlueGravity.GameServices;
+using BlueGravity.Services;
 using UnityEngine;
 using UnityEngine.Events;
 
