@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 9197926887402317957, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8abf0d226af406f47b650b4a5d37fd96, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
 --- !u!4 &741633887714614804 stripped
@@ -110,6 +114,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
+--- !u!114 &6444415612096495359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741633887714614807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61474c2b93c42f5a53b0cc144202f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParts:
+  - {fileID: 11400000, guid: c88d073e83a0b1a4a896948925f32ffa, type: 2}
+  - {fileID: 11400000, guid: 7485673e0a0847242a56f797eaaa64fc, type: 2}
+  - {fileID: 11400000, guid: b8c34f57a883197498d7816eaab12a31, type: 2}
+  _animator: {fileID: 2990712085004172933}
+  _animatorOverrideController: {fileID: 22100000, guid: 8abf0d226af406f47b650b4a5d37fd96, type: 2}
 --- !u!114 &7146094547700962469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +148,7 @@ MonoBehaviour:
   _characterMovement: {fileID: 5967615114200254975}
   _characterInteraction: {fileID: 1499224094101345868}
   _interactionArea: {fileID: 1159771040441847791}
+  _humanoidAssembler: {fileID: 6444415612096495359}
   _characterView: {fileID: 3926360606394352878}
 --- !u!95 &2990712085004172933 stripped
 Animator:

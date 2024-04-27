@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416f537e601b489094f116d9b13adbeb, type: 3}
+  m_Name: Body_1_walk
+  m_EditorClassIdentifier: 
+  _animationClips:
+  - {fileID: 7400000, guid: 8248130ac88d1554d9c11d728ea63d8b, type: 2}
+  - {fileID: 7400000, guid: 3b4c53c8692b13b47b7dda014c6dc04e, type: 2}
+  - {fileID: 7400000, guid: e0245aabe13a11548ad867c50f53bba5, type: 2}
+  - {fileID: 7400000, guid: 580ff4542ab639641ac703577cd16f9c, type: 2}
