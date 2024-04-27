@@ -13,15 +13,17 @@ namespace BlueGravity.UI.Screens.Shop
         private Button _button;
         [SerializeField]
         private Image _itemImage;
+        [SerializeField]
+        private GameObject _noneImageContainer;
         
         private BodyPartData _bodyPartData;
-        private BodyPartCategoryData _categoryData;
+        private bool _isNone;
 
-        public void Begin(BodyPartData bodyPartData, BodyPartCategoryData categoryData)
+        public void Begin(BodyPartData bodyPartData, bool isNone)
         {
             _bodyPartData = bodyPartData;
-            _categoryData = categoryData;
-            
+            _isNone = isNone;
+
             base.Begin();
         }
 
@@ -30,7 +32,14 @@ namespace BlueGravity.UI.Screens.Shop
             base.OnBegin();
 
             _button.onClick.AddListener(HandleButtonClick);
-            
+
+            if (_isNone)
+            {
+                _noneImageContainer.SetActive(true);
+                _itemImage.gameObject.SetActive(false);
+                return;
+            }
+
             _itemImage.sprite = _bodyPartData.DisplaySprite;
             _itemImage.SetNativeSize();
         }

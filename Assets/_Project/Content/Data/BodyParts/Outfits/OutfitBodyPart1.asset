@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OutfitBodyPart1
   m_EditorClassIdentifier: 
   _id: outfit_body_part_1
+  _categoryData: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
   _displaySprite: {fileID: 1019248795, guid: 76008a1a5eb5d8e43a0b4a3953640dda, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: 5fe737f8202e832448adbf5a69fc640c, type: 2}
@@ -23,3 +24,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 898ad3782f37cde4d8d91dd5573238c3, type: 2}
   - {fileID: 7400000, guid: d20b2a3171e962e469373be4a8084c60, type: 2}
   - {fileID: 7400000, guid: bd3ecd423d3e7cb44827d45b825b7e50, type: 2}
+  _isVisible: 1

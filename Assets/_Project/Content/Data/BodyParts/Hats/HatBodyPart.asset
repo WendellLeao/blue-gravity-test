@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HatBodyPart
   m_EditorClassIdentifier: 
   _id: hat_body_part
+  _categoryData: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}
   _displaySprite: {fileID: 216993263, guid: 1fd54e5092b9116488f2f08a363ed648, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: 6a1074a440cb73b4892bcbeea4175e91, type: 2}
@@ -23,3 +24,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 00a95dd8930704e4fa41c72678f77bc4, type: 2}
   - {fileID: 7400000, guid: becfb99182bb6c34b8dc3bcd766fce1d, type: 2}
   - {fileID: 7400000, guid: a063411885e533d4caafd241875b3892, type: 2}
+  _isVisible: 1

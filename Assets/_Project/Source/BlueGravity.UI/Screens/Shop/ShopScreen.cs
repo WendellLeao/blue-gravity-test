@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Assembler;
 using BlueGravity.Services;
@@ -9,13 +8,10 @@ namespace BlueGravity.UI.Screens.Shop
     public sealed class ShopScreen : UIScreen
     {
         [SerializeField]
-        private Transform _contentTransform;
-        [SerializeField]
-        private ShopItem _shopItemPrefab;
+        private ShopSection[] _sections;
         [SerializeField]
         private BodyPartsCollectionData _partsCollection;
 
-        private readonly List<ShopItem> _shopItems = new();
         private IEventService _eventService;
 
         protected override void OnInitialize()
@@ -24,59 +20,53 @@ namespace BlueGravity.UI.Screens.Shop
 
             _eventService = ServiceLocator.GetService<IEventService>();
             
-            PopulateGridLayoutGroup();
+            BeginAndPopulateShopSections();
         }
 
         protected override void OnDispose()
         {
             base.OnDispose();
 
-            DisposeShopItems();
+            StopSections();
         }
 
-        private void PopulateGridLayoutGroup()
+        private void BeginAndPopulateShopSections()
         {
-            BodyPartsGroupData[] partsGroups = _partsCollection.BodyPartsGroups;
-
-            for (int i = 0; i < partsGroups.Length; i++)
+            for (int i = 0; i < _sections.Length; i++)
             {
-                BodyPartsGroupData partGroupData = partsGroups[i];
+                ShopSection section = _sections[i];
 
-                for (int j = 0; j < partGroupData.BodyPartsData.Length; j++)
+                section.Begin(_eventService);
+                
+                PopulateShopSection(section);
+            }
+        }
+
+        private void PopulateShopSection(ShopSection section)
+        {
+            for (int i = 0; i < _partsCollection.BodyPartsGroups.Length; i++)
+            {
+                BodyPartsGroupData bodyPartsGroups = _partsCollection.BodyPartsGroups[i];
+
+                if (bodyPartsGroups.CategoryData.Id.Contains(section.CategoryId))
                 {
-                    BodyPartData bodyPartData = partGroupData.BodyPartsData[j];
-
-                    CreateNewShopItem(bodyPartData, partGroupData.CategoryData);
+                    BodyPartData defaultBodyPart = bodyPartsGroups.CategoryData.DefaultBodyPart;
+                    
+                    bool hasNone = !defaultBodyPart.IsVisible;
+                    
+                    section.PopulateGridLayoutGroup(bodyPartsGroups.BodyPartsData, hasNone);
                 }
             }
         }
 
-        private void CreateNewShopItem(BodyPartData bodyPartData, BodyPartCategoryData categoryData)
+        private void StopSections()
         {
-            ShopItem shopItem = Instantiate(_shopItemPrefab, _contentTransform);
-
-            shopItem.OnItemBought += HandleItemBought;
-
-            shopItem.Begin(bodyPartData, categoryData);
-
-            _shopItems.Add(shopItem);
-        }
-
-        private void HandleItemBought(BodyPartData bodyPartData)
-        {
-            _eventService.DispatchEvent(new BodyPartBoughtEvent(bodyPartData));
-        }
-        
-        private void DisposeShopItems()
-        {
-            for (int i = 0; i < _shopItems.Count; i++)
+            for (int i = 0; i < _sections.Length; i++)
             {
-                ShopItem shopItem = _shopItems[i];
-
-                shopItem.OnItemBought -= HandleItemBought;
+                ShopSection section = _sections[i];
+                
+                section.Stop();
             }
-
-            _shopItems.Clear();
         }
     }
 }

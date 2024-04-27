@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HairBodyPart1
   m_EditorClassIdentifier: 
   _id: hair_body_part_1
+  _categoryData: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
   _displaySprite: {fileID: 1096973464, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: 0d779e16b62c3fb49bb7e78bce62b0a8, type: 2}
@@ -23,3 +24,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: b297f36835c1d8a4ba2969888a7caea6, type: 2}
   - {fileID: 7400000, guid: 01746f95be7881341bb2b74c114ec015, type: 2}
   - {fileID: 7400000, guid: 237ee040d6ae50c4d9e25f6d3db5edd9, type: 2}
+  _isVisible: 1

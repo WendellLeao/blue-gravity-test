@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BodyPart
   m_EditorClassIdentifier: 
   _id: body_part
+  _categoryData: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
   _displaySprite: {fileID: 344802445, guid: 6fd85e1fb9befd14aaadb82d55414b4e, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: fed20e79cf349af45afb64026145697c, type: 2}
@@ -23,3 +24,4 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 3b4c53c8692b13b47b7dda014c6dc04e, type: 2}
   - {fileID: 7400000, guid: e0245aabe13a11548ad867c50f53bba5, type: 2}
   - {fileID: 7400000, guid: 580ff4542ab639641ac703577cd16f9c, type: 2}
+  _isVisible: 1
