@@ -22,7 +22,7 @@ namespace BlueGravity.Gameplay.Reception
         {
             base.OnInteract(interactionArea);
 
-            _eventService.DispatchEvent(new InteractShopKeeperEvent(interactionArea));
+            _eventService.DispatchEvent(new InteractShopKeeperStartedEvent(interactionArea));
         }
     }
 }

@@ -3,11 +3,11 @@ using BlueGravity.Gameplay.Interaction;
 
 namespace BlueGravity.Gameplay.Reception
 {
-    public sealed class InteractShopKeeperEvent : GameEvent
+    public sealed class InteractShopKeeperStartedEvent : GameEvent
     {
         public IInteractionArea InteractionArea { get; private set; }
 
-        public InteractShopKeeperEvent(IInteractionArea interactionArea)
+        public InteractShopKeeperStartedEvent(IInteractionArea interactionArea)
         {
             InteractionArea = interactionArea;
         }

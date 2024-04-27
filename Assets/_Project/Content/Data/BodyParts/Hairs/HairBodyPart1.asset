@@ -15,6 +15,7 @@ MonoBehaviour:
   _id: hair_body_part_1
   _categoryData: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
   _displaySprite: {fileID: 1096973464, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
+  _price: 50
   _animationClips:
   - {fileID: 7400000, guid: 0d779e16b62c3fb49bb7e78bce62b0a8, type: 2}
   - {fileID: 7400000, guid: 6ff82e21e6562c246a226e65046317a9, type: 2}

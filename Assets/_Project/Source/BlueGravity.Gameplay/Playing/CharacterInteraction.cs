@@ -1,4 +1,3 @@
-using System;
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.Input;
@@ -7,8 +6,6 @@ namespace BlueGravity.Gameplay.Playing
 {
     public sealed class CharacterInteraction : EntityComponent
     {
-        public event Action OnInteractShopKeeper; 
-
         private IInputService _inputService;
         private IEventService _eventService;
         private IInteractionArea _interactionArea;
@@ -47,8 +44,6 @@ namespace BlueGravity.Gameplay.Playing
         {
             if (_hasInteractableNearby && inputsData.PressInteract)
             {
-                OnInteractShopKeeper?.Invoke();
-
                 _interactable.TryInteract(_interactionArea);
             }
         }

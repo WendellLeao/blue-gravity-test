@@ -1,5 +1,6 @@
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Assembler;
+using BlueGravity.Gameplay.Reception;
 using BlueGravity.Services;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,6 +73,13 @@ namespace BlueGravity.UI.Screens.Shop
             ResetTabButtonsState();
             
             _shopTabButtons[0].SetIsInteractable(false);
+        }
+
+        protected override void OnClose()
+        {
+            base.OnClose();
+            
+            _eventService.DispatchEvent(new InteractShopKeeperEndedEvent());
         }
 
         private void HandleCloseButtonClick()

@@ -7,22 +7,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 477932929480733522, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Size.x
+      value: 0.38
+      objectReference: {fileID: 0}
     - target: {fileID: 656075382914858714, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Name
       value: ShopKeeperView
       objectReference: {fileID: 0}
+    - target: {fileID: 656075382914858714, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047572698548592136, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096819536822144520, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2655717821750667665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2031061546, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
+      objectReference: {fileID: 1096973464, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
     - target: {fileID: 2892902867097398854, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1844272306, guid: 6fd85e1fb9befd14aaadb82d55414b4e, type: 3}
+      objectReference: {fileID: 344802445, guid: 6fd85e1fb9befd14aaadb82d55414b4e, type: 3}
     - target: {fileID: 4082396607575219527, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 697193520, guid: cb010a5a441191f4691a0877ec7062e8, type: 3}
+      objectReference: {fileID: -1396697015, guid: cb010a5a441191f4691a0877ec7062e8, type: 3}
     - target: {fileID: 6660380855939762196, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,9 +87,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopKeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 6660380855939762199, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7144495847536152834, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224281368764059796, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796738572465263422, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1096973464, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
     - target: {fileID: 7796738572465263422, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618435527810320139, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9197926887402317957, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_Enabled

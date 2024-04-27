@@ -1,5 +1,6 @@
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
+using BlueGravity.Gameplay.Reception;
 using BlueGravity.Input;
 using BlueGravity.Services;
 using UnityEngine;
@@ -18,31 +19,35 @@ namespace BlueGravity.Gameplay.Playing
         private InteractionArea _interactionArea;
         [SerializeField]
         private CharacterView _characterView;
-        
+
+        private IEventService _eventService;
+
         protected override void OnBegin()
         {
             base.OnBegin();
 
             IInputService inputService = ServiceLocator.GetService<IInputService>();
-            IEventService eventService = ServiceLocator.GetService<IEventService>();
+            _eventService = ServiceLocator.GetService<IEventService>();
+            
+            _eventService.AddEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperStartedEvent);
+            _eventService.AddEventListener<InteractShopKeeperEndedEvent>(HandleInteractShopKeeperEndedEvent);
             
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
-            _characterInteraction.Begin(inputService, eventService, _interactionArea);
+            _characterInteraction.Begin(inputService, _eventService, _interactionArea);
 
-            _characterView.Setup(eventService);
-
-            _characterInteraction.OnInteractShopKeeper += HandleInteractShopKeeper;
+            _characterView.Setup(_eventService);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
             
+            _eventService.RemoveEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperStartedEvent);
+            _eventService.RemoveEventListener<InteractShopKeeperEndedEvent>(HandleInteractShopKeeperEndedEvent);
+
             _characterMovement.Stop();
 
             _characterView.Dispose();
-            
-            _characterInteraction.OnInteractShopKeeper -= HandleInteractShopKeeper;
         }
 
         protected override void OnTick(float deltaTime)
@@ -62,11 +67,22 @@ namespace BlueGravity.Gameplay.Playing
             _characterMovement.FixedTick(fixedDeltaTime);
         }
 
-        private void HandleInteractShopKeeper()
+        private void HandleInteractShopKeeperStartedEvent(GameEvent gameEvent)
         {
-            _characterMovement.Stop();
-            
-            _characterView.Reset();
+            if (gameEvent is InteractShopKeeperStartedEvent)
+            {
+                _characterMovement.Stop();
+                
+                _characterView.Reset();
+            }
+        }
+        
+        private void HandleInteractShopKeeperEndedEvent(GameEvent gameEvent)
+        {
+            if (gameEvent is InteractShopKeeperEndedEvent)
+            {
+                _characterMovement.Begin();
+            }
         }
     }
 }

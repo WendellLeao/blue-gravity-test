@@ -22,7 +22,7 @@ namespace BlueGravity.UI
             _eventService = ServiceLocator.GetService<IEventService>();
             _screenService = ServiceLocator.GetService<IScreenService>();
             
-            _eventService.AddEventListener<InteractShopKeeperEvent>(HandleInteractShopKeeperEvent);
+            _eventService.AddEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperEvent);
 
             _screensManager.Initialize();
 
@@ -33,14 +33,14 @@ namespace BlueGravity.UI
         {
             base.OnDispose();
 
-            _eventService.RemoveEventListener<InteractShopKeeperEvent>(HandleInteractShopKeeperEvent);
+            _eventService.RemoveEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperEvent);
             
             _screensManager.Dispose();
         }
 
         private void HandleInteractShopKeeperEvent(GameEvent gameEvent)
         {
-            if (gameEvent is InteractShopKeeperEvent)
+            if (gameEvent is InteractShopKeeperStartedEvent)
             {
                 _screenService.OpenScreen<ShopScreen>();
             }

@@ -15,6 +15,7 @@ MonoBehaviour:
   _id: hat_body_part_1
   _categoryData: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}
   _displaySprite: {fileID: 477754407, guid: f68ac5209b6e7e148b71b8b2c3ba03ab, type: 3}
+  _price: 65
   _animationClips:
   - {fileID: 7400000, guid: b8a498c1b49e2e74f976cf3271566452, type: 2}
   - {fileID: 7400000, guid: 4ae7a282c22fdf54c85b59da82481428, type: 2}

@@ -11,6 +11,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterView
       objectReference: {fileID: 0}
+    - target: {fileID: 656075382914858714, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047572698548592136, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096819536822144520, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655717821750667665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892902867097398854, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082396607575219527, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6660380855939762196, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -59,6 +83,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 6660380855939762199, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7144495847536152834, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796738572465263422, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618435527810320139, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
 --- !u!4 &741633887714614804 stripped
@@ -84,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointTransform: {fileID: 741633887714614804}
-  _interactionRadius: 4
+  _interactionRadius: 1
 --- !u!114 &1499224094101345868
 MonoBehaviour:
   m_ObjectHideFlags: 0

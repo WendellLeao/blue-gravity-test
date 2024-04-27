@@ -20,19 +20,19 @@ namespace BlueGravity.Rendering
         {
             base.OnBegin();
             
-            _eventService.AddEventListener<InteractShopKeeperEvent>(HandleInteractShopKeeperEvent);
+            _eventService.AddEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperEvent);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
             
-            _eventService.AddEventListener<InteractShopKeeperEvent>(HandleInteractShopKeeperEvent);
+            _eventService.AddEventListener<InteractShopKeeperStartedEvent>(HandleInteractShopKeeperEvent);
         }
 
         private void HandleInteractShopKeeperEvent(GameEvent gameEvent)
         {
-            if (gameEvent is InteractShopKeeperEvent interactShopKeeperEvent)
+            if (gameEvent is InteractShopKeeperStartedEvent interactShopKeeperEvent)
             {
                 IInteractionArea interactionArea = interactShopKeeperEvent.InteractionArea;
 

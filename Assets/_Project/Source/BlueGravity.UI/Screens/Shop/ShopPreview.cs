@@ -1,5 +1,6 @@
 using System;
 using BlueGravity.Gameplay.Assembler;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,9 +14,13 @@ namespace BlueGravity.UI.Screens.Shop
         [SerializeField]
         private Button _buyButton;
         [SerializeField]
+        private TMP_Text _buyPriceText;
+        [SerializeField]
         private Button _equipButton;
         [SerializeField]
         private Button _sellButton;
+        [SerializeField]
+        private TMP_Text _sellPriceText;
         [SerializeField]
         private GameObject _buyButtonsGroup;
         [SerializeField]
@@ -65,6 +70,9 @@ namespace BlueGravity.UI.Screens.Shop
         public void PreviewBodyPart(BodyPartData bodyPartData)
         {
             _currentBodyPartData = bodyPartData;
+
+            _buyPriceText.text = $"Price {bodyPartData.Price}";
+            _sellPriceText.text = $"Sell {bodyPartData.Price}";
             
             _buyButtonsGroup.SetActive(!_currentBodyPartData.WasBought);
             _boughtButtonsGroup.SetActive(_currentBodyPartData.WasBought);
