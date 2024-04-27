@@ -8,19 +8,28 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private BodyPart[] _allBodies;
         [SerializeField]
-        private BodyPart[] _allHeads;
-        [SerializeField]
         private BodyPart[] _allOutfits;
+        [SerializeField]
+        private BodyPart[] _allHairs;
+        [SerializeField]
+        private BodyPart[] _allHats;
 
         public BodyPart DefaultBody => _allBodies[0];
-        public BodyPart DefaultHead => _allHeads[0];
         public BodyPart DefaultOutfit => _allOutfits[0];
-        public BodyPart[] AllHeads => _allHeads;
+        public BodyPart DefaultHair => _allHairs[0];
+        public BodyPart DefaultHat => _allHats[0];
         public BodyPart[] AllOutfits => _allOutfits;
+        public BodyPart[] AllHairs => _allHairs;
+        public BodyPart[] AllHats => _allHats;
 
-        public bool TryGetHeadById(string id, out BodyPart bodyPart)
+        public bool TryGetHairById(string id, out BodyPart bodyPart)
         {
-            return TryGetBodyPartById(id, _allHeads, out bodyPart);
+            return TryGetBodyPartById(id, _allHairs, out bodyPart);
+        }
+        
+        public bool TryGetHatById(string id, out BodyPart bodyPart)
+        {
+            return TryGetBodyPartById(id, _allHats, out bodyPart);
         }
         
         public bool TryGetOutfitById(string id, out BodyPart bodyPart)

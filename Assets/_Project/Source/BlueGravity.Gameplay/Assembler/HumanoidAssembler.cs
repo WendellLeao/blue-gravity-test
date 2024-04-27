@@ -32,9 +32,20 @@ namespace BlueGravity.Gameplay.Assembler
             base.OnTick(deltaTime);
 
 #if DEBUG
+            if (UnityEngine.Input.GetKeyDown(KeyCode.I))
+            {
+                BodyPart[] allHairs = _bodyPartsCollection.AllHairs;
+                
+                int randomNumber = Random.Range(0, allHairs.Length);
+                
+                BodyPart randomHair = allHairs[randomNumber];
+                
+                OverrideAnimatorAnimationClips(randomHair);
+            }
+            
             if (UnityEngine.Input.GetKeyDown(KeyCode.O))
             {
-                BodyPart[] allHeads = _bodyPartsCollection.AllHeads;
+                BodyPart[] allHeads = _bodyPartsCollection.AllHats;
                 
                 int randomNumber = Random.Range(0, allHeads.Length);
                 
@@ -59,10 +70,12 @@ namespace BlueGravity.Gameplay.Assembler
         private void UpdateBodyParts()
         {
             OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultBody);
-            
-            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultHead);
-            
+
             OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultOutfit);
+
+            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultHair);
+            
+            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultHat);
         }
 
         private void OverrideAnimatorAnimationClips(BodyPart bodyPart)

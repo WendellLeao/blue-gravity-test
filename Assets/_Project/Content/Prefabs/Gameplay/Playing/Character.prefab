@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterView
       objectReference: {fileID: 0}
+    - target: {fileID: 2655717821750667665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Color.b
+      value: 0.15566039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655717821750667665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15566039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655717821750667665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20754719
+      objectReference: {fileID: 0}
     - target: {fileID: 6660380855939762196, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_RootOrder
       value: 0

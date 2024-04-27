@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allBodies:
   - {fileID: 11400000, guid: c88d073e83a0b1a4a896948925f32ffa, type: 2}
-  _allHeads:
-  - {fileID: 11400000, guid: 7485673e0a0847242a56f797eaaa64fc, type: 2}
-  - {fileID: 11400000, guid: ad4bd252c31808441baedd13e861f05f, type: 2}
   _allOutfits:
   - {fileID: 11400000, guid: 99931e40367e2dd4382dccfab604aead, type: 2}
   - {fileID: 11400000, guid: b8c34f57a883197498d7816eaab12a31, type: 2}
   - {fileID: 11400000, guid: 5584cecd4ee73f546ae8cc567281a385, type: 2}
   - {fileID: 11400000, guid: a62f8e43b673bd84090c46858f6cd677, type: 2}
+  _allHairs:
+  - {fileID: 11400000, guid: 20ff79ca099cfe8449a5006adb45578a, type: 2}
+  - {fileID: 11400000, guid: 855af6968e8ec5a478fa14f6c3534ceb, type: 2}
+  _allHats:
+  - {fileID: 11400000, guid: 7485673e0a0847242a56f797eaaa64fc, type: 2}
+  - {fileID: 11400000, guid: ad4bd252c31808441baedd13e861f05f, type: 2}

@@ -47,6 +47,8 @@ namespace BlueGravity.Gameplay.Playing
 
             _characterMovement.Tick(deltaTime);
             _characterInteraction.Tick(deltaTime);
+            
+            _characterView.Tick(deltaTime);
         }
 
         protected override void OnFixedTick(float fixedDeltaTime)
