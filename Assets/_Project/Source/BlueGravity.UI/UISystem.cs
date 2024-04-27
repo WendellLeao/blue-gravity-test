@@ -19,7 +19,6 @@ namespace BlueGravity.UI
 
             _screensManager.Initialize();
 
-            _screenService.OpenScreen<TestScreen>();
             _screenService.OpenScreen<HUDScreen>();
         }
 
