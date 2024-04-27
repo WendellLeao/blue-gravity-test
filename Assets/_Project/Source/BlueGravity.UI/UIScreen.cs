@@ -9,6 +9,8 @@ namespace BlueGravity.UI
         private bool _isInitialized;
         private bool _isOpened;
 
+        protected IScreenService ScreenService => _screenService;
+        
         public void Initialize()
         {
             if (_isInitialized)

@@ -4,6 +4,8 @@ namespace BlueGravity.UI.Screens.Shop
 {
     public interface IShopSection
     {
+        public void Dispose();
+        
         public void Open();
 
         public void Close();

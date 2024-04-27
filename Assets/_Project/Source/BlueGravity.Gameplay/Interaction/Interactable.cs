@@ -6,14 +6,14 @@ namespace BlueGravity.Gameplay.Interaction
         
         public bool IsAvailable => _isAvailable;
 
-        public bool TryInteract()
+        public bool TryInteract(IInteractionArea interactionArea)
         {
             if (!_isAvailable)
             {
                 return false;
             }
 
-            OnInteract();
+            OnInteract(interactionArea);
 
             _isAvailable = false;
             
@@ -32,7 +32,7 @@ namespace BlueGravity.Gameplay.Interaction
             OnStopInteract();
         }
 
-        protected virtual void OnInteract()
+        protected virtual void OnInteract(IInteractionArea interactionArea)
         { }
         
         protected virtual void OnStopInteract()

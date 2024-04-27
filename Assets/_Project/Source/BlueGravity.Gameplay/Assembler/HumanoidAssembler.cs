@@ -28,7 +28,11 @@ namespace BlueGravity.Gameplay.Assembler
 
                 if (bodyPart.CategoryId.Contains(bodyPartData.CategoryId))
                 {
+                    bodyPart.Data.SetIsEquipped(false);
+                    
                     bodyPart.SetBodyPartData(bodyPartData);
+                    
+                    bodyPartData.SetIsEquipped(true);
                 }
             }
 
@@ -54,6 +58,9 @@ namespace BlueGravity.Gameplay.Assembler
                 {
                     bodyPart.Begin(data);   
 
+                    data.SetWasBought(true);
+                    data.SetIsEquipped(true);
+                    
                     OverrideAnimatorAnimationClips(data);
                 }
             }

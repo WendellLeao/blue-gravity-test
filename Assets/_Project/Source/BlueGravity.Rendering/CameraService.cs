@@ -1,7 +1,7 @@
 using BlueGravity.Services;
 using UnityEngine;
 
-namespace BlueGravity.Cameras
+namespace BlueGravity.Rendering
 {
     public sealed class CameraService : GameService, ICameraService
     {

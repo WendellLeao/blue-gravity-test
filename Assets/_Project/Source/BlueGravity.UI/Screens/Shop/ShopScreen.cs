@@ -2,15 +2,20 @@ using BlueGravity.Events;
 using BlueGravity.Gameplay.Assembler;
 using BlueGravity.Services;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BlueGravity.UI.Screens.Shop
 {
     public sealed class ShopScreen : UIScreen
     {
         [SerializeField]
+        private Button _closeButton;
+        [SerializeField]
         private ShopSection[] _sections;
         [SerializeField]
         private ShopTabButton[] _shopTabButtons;
+        [SerializeField]
+        private ShopPreview _shopPreview;
         [SerializeField]
         private BodyPartsCollectionData _partsCollection;
 
@@ -22,6 +27,8 @@ namespace BlueGravity.UI.Screens.Shop
 
             _eventService = ServiceLocator.GetService<IEventService>();
 
+            _shopPreview.Initialize();
+            
             BeginAndPopulateShopSections();
 
             BeginTabButtons();
@@ -31,19 +38,65 @@ namespace BlueGravity.UI.Screens.Shop
         {
             base.OnDispose();
 
-            StopSections();
+            _shopPreview.Dispose();
+            
+            DisposeSections();
 
-            StopTabButtons();
+            DisposeTabButtons();
         }
 
+        protected override void OnSubscribeEvents()
+        {
+            base.OnSubscribeEvents();
+            
+            _closeButton.onClick.AddListener(HandleCloseButtonClick);
+            
+            _shopPreview.OnBodyPartEquipped += HandleBodyPartEquipped;
+            _shopPreview.OnBodyPartSold += HandleBodyPartSold;
+        }
+
+        protected override void OnUnsubscribeEvents()
+        {
+            base.OnUnsubscribeEvents();
+            
+            _closeButton.onClick.RemoveListener(HandleCloseButtonClick);
+            
+            _shopPreview.OnBodyPartEquipped -= HandleBodyPartEquipped;
+            _shopPreview.OnBodyPartSold -= HandleBodyPartSold;
+        }
+
+        protected override void OnOpen()
+        {
+            base.OnOpen();
+
+            ResetTabButtonsState();
+            
+            _shopTabButtons[0].SetIsInteractable(false);
+        }
+
+        private void HandleCloseButtonClick()
+        {
+            ScreenService.CloseScreenOnTop();
+        }
+
+        private void HandleBodyPartEquipped(BodyPartData bodyPartData)
+        {
+            _eventService.DispatchEvent(new BodyPartBoughtEvent(bodyPartData));
+        }
+        
+        private void HandleBodyPartSold(BodyPartData bodyPartData)
+        {
+            _eventService.DispatchEvent(new BodyPartSoldEvent(bodyPartData));
+        }
+        
         private void BeginAndPopulateShopSections()
         {
             for (int i = 0; i < _sections.Length; i++)
             {
                 ShopSection section = _sections[i];
 
-                section.Begin(_eventService);
-                
+                section.OnItemButtonClicked += HandleItemButtonClicked;
+
                 PopulateShopSection(section);
             }
         }
@@ -73,12 +126,14 @@ namespace BlueGravity.UI.Screens.Shop
 
                 tabButton.OnButtonClick += HandleTabButtonClick;
                 
-                tabButton.Begin(_sections[i]);
+                tabButton.Initialize(_sections[i]);
             }
         }
 
         private void HandleTabButtonClick(IShopSection clickedSection)
         {
+            ResetTabButtonsState();
+            
             for (int i = 0; i < _sections.Length; i++)
             {
                 ShopSection section = _sections[i];
@@ -89,17 +144,34 @@ namespace BlueGravity.UI.Screens.Shop
             clickedSection.Open();
         }
         
-        private void StopSections()
+        private void ResetTabButtonsState()
+        {
+            for (int i = 0; i < _shopTabButtons.Length; i++)
+            {
+                ShopTabButton tabButton = _shopTabButtons[i];
+
+                tabButton.SetIsInteractable(true);
+            }
+        }
+
+        private void DisposeSections()
         {
             for (int i = 0; i < _sections.Length; i++)
             {
                 ShopSection section = _sections[i];
+
+                section.OnItemButtonClicked -= HandleItemButtonClicked;
                 
-                section.Stop();
+                section.Dispose();
             }
         }
-        
-        private void StopTabButtons()
+
+        private void HandleItemButtonClicked(BodyPartData bodyPartData)
+        {
+            _shopPreview.PreviewBodyPart(bodyPartData);
+        }
+
+        private void DisposeTabButtons()
         {
             for (int i = 0; i < _shopTabButtons.Length; i++)
             {
@@ -107,7 +179,7 @@ namespace BlueGravity.UI.Screens.Shop
                 
                 tabButton.OnButtonClick -= HandleTabButtonClick;
                 
-                tabButton.Stop();
+                tabButton.Dispose();
             }
         }
     }

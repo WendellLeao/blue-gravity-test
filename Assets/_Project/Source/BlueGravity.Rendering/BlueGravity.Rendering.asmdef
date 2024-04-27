@@ -3,7 +3,9 @@
     "rootNamespace": "BlueGravity.Rendering",
     "references": [
         "GUID:398b5996024baac43a96d67a0b47e85a",
-        "GUID:9dddf910ca970b049ba89477479dde1e"
+        "GUID:9dddf910ca970b049ba89477479dde1e",
+        "GUID:a5777e44e3008bc458bf90f9adbf913c",
+        "GUID:57c4c48c811f2c943a4f58ed559c5709"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

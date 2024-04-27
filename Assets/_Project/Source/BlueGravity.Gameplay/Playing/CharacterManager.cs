@@ -10,7 +10,7 @@ namespace BlueGravity.Gameplay.Playing
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            
+
             _character.Begin();
         }
 

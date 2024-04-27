@@ -12,6 +12,7 @@ namespace BlueGravity.Gameplay.Assembler
         private BodyPartData _data;
 
         public string CategoryId => _categoryData.Id;
+        public BodyPartData Data => _data;
 
         public void Begin(BodyPartData data)
         {

@@ -24,12 +24,19 @@ namespace BlueGravity.Gameplay.Playing
             
             base.Setup();
         }
+
+        public void Reset()
+        {
+            _animator.SetFloat(HorizontalMovement, 0f);
+            _animator.SetFloat(VerticalMovement, 0f);
+        }
         
         protected override void OnSetup()
         {
             base.OnSetup();
 
             _eventService.AddEventListener<BodyPartBoughtEvent>(HandleBodyPartBoughtEvent);
+            _eventService.AddEventListener<BodyPartSoldEvent>(HandleBodyPartSoldEvent);
             
             _humanoidAssembler.Begin(_animator);
         }
@@ -39,6 +46,7 @@ namespace BlueGravity.Gameplay.Playing
             base.OnDispose();
             
             _eventService.RemoveEventListener<BodyPartBoughtEvent>(HandleBodyPartBoughtEvent);
+            _eventService.RemoveEventListener<BodyPartSoldEvent>(HandleBodyPartSoldEvent);
             
             _humanoidAssembler.Stop();
         }
@@ -57,6 +65,16 @@ namespace BlueGravity.Gameplay.Playing
                 BodyPartData bodyPartData = bodyPartBoughtEvent.BodyPartData;
                 
                 _humanoidAssembler.EquipBodyPart(bodyPartData);
+            }
+        }
+        
+        private void HandleBodyPartSoldEvent(GameEvent gameEvent)
+        {
+            if (gameEvent is BodyPartBoughtEvent bodyPartBoughtEvent)
+            {
+                BodyPartData bodyPartData = bodyPartBoughtEvent.BodyPartData;
+                
+                _humanoidAssembler.EquipBodyPart(bodyPartData.CategoryData.DefaultBodyPart);
             }
         }
         

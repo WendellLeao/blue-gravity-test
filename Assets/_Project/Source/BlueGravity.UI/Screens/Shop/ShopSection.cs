@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
-using BlueGravity.Events;
 using BlueGravity.Gameplay.Assembler;
 using UnityEngine;
 
 namespace BlueGravity.UI.Screens.Shop
 {
-    public sealed class ShopSection : EntityComponent, IShopSection
+    public sealed class ShopSection : MonoBehaviour, IShopSection
     {
+        public event Action<BodyPartData> OnItemButtonClicked;
+        
         [SerializeField]
         private ShopItem _shopItemPrefab;
         [SerializeField]
@@ -17,15 +19,12 @@ namespace BlueGravity.UI.Screens.Shop
         private BodyPartData _bodyPartNone;
 
         private readonly List<ShopItem> _shopItems = new();
-        private IEventService _eventService;
 
         public string CategoryId => _bodyPartCategoryData.Id;
 
-        public void Begin(IEventService eventService)
+        public void Dispose()
         {
-            _eventService = eventService;
-            
-            base.Begin();
+            DisposeShopItems();
         }
         
         public void Open()
@@ -52,28 +51,21 @@ namespace BlueGravity.UI.Screens.Shop
                 CreateNewShopItem(bodyPartData, isNone: false);
             }
         }
-
-        protected override void OnStop()
-        {
-            base.OnStop();
-
-            DisposeShopItems();
-        }
-
+        
         private void CreateNewShopItem(BodyPartData bodyPartData, bool isNone)
         {
             ShopItem shopItem = Instantiate(_shopItemPrefab, _contentTransform);
 
-            shopItem.OnItemBought += HandleItemBought;
+            shopItem.OnItemButtonClicked += HandleItemButtonClicked;
 
-            shopItem.Begin(bodyPartData, isNone);
+            shopItem.Setup(bodyPartData, isNone);
 
             _shopItems.Add(shopItem);
         }
 
-        private void HandleItemBought(BodyPartData bodyPartData)
+        private void HandleItemButtonClicked(BodyPartData bodyPartData)
         {
-            _eventService.DispatchEvent(new BodyPartBoughtEvent(bodyPartData));
+            OnItemButtonClicked?.Invoke(bodyPartData);
         }
         
         private void DisposeShopItems()
@@ -82,7 +74,9 @@ namespace BlueGravity.UI.Screens.Shop
             {
                 ShopItem shopItem = _shopItems[i];
 
-                shopItem.OnItemBought -= HandleItemBought;
+                shopItem.OnItemButtonClicked -= HandleItemButtonClicked;
+                
+                shopItem.Dispose();
             }
 
             _shopItems.Clear();

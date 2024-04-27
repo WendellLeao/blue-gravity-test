@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace BlueGravity.UI.Screens.Shop
 {
-    public sealed class ShopTabButton : EntityComponent
+    public sealed class ShopTabButton : MonoBehaviour
     {
         public event Action<IShopSection> OnButtonClick;
         
@@ -13,30 +13,28 @@ namespace BlueGravity.UI.Screens.Shop
 
         private IShopSection _shopSection;
 
-        public void Begin(IShopSection section)
+        public void Initialize(IShopSection section)
         {
             _shopSection = section;
-            
-            base.Begin();
-        }
-        
-        protected override void OnBegin()
-        {
-            base.OnBegin();
             
             _button.onClick.AddListener(HandleButtonClick);
         }
 
-        protected override void OnStop()
+        public void Dispose()
         {
-            base.OnStop();
-            
             _button.onClick.RemoveListener(HandleButtonClick);
         }
 
         private void HandleButtonClick()
         {
             OnButtonClick?.Invoke(_shopSection);
+            
+            SetIsInteractable(false);
+        }
+
+        public void SetIsInteractable(bool isInteractable)
+        {
+            _button.interactable = isInteractable;
         }
     }
 }

@@ -16,10 +16,25 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private bool _isVisible = true;
 
-        public string Id => _id;
+        private bool _wasBought;
+        private bool _isEquipped;
+        
         public string CategoryId => _categoryData.Id;
+        public BodyPartCategoryData CategoryData => _categoryData;
         public Sprite DisplaySprite => _displaySprite;
         public AnimationClip[] AnimationClips => _animationClips;
         public bool IsVisible => _isVisible;
+        public bool WasBought => _wasBought;
+        public bool IsEquipped => _isEquipped;
+
+        public void SetWasBought(bool wasBought)
+        {
+            _wasBought = wasBought;
+        }
+        
+        public void SetIsEquipped(bool isEquipped)
+        {
+            _isEquipped = isEquipped;
+        }
     }
 }

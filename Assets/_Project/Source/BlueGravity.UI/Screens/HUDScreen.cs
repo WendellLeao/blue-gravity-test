@@ -1,4 +1,3 @@
-using BlueGravity.Cameras;
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.Services;
@@ -11,18 +10,14 @@ namespace BlueGravity.UI.Screens
     {
         [SerializeField]
         private TMP_Text _promptText;
-        [SerializeField]
-        private Vector3 _promptTextOffset;
 
         private IEventService _eventService;
-        private ICameraService _cameraService;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
 
             _eventService = ServiceLocator.GetService<IEventService>();
-            _cameraService = ServiceLocator.GetService<ICameraService>();
             
             SetPromptTextActive(false);
         }
@@ -45,25 +40,17 @@ namespace BlueGravity.UI.Screens
         
         private void HandleInteractionAreaEnteredEvent(GameEvent gameEvent)
         {
-            if (gameEvent is InteractionAreaEnteredEvent interactionAreaEnteredEvent)
+            if (gameEvent is InteractionAreaEnteredEvent)
             {
                 SetPromptTextActive(true);
-
-                IInteractionArea interactionArea = interactionAreaEnteredEvent.InteractionArea;
-
-                SetPromptTextPosition(interactionArea.PointTransform);
             }
         }
         
         private void HandleInteractionAreaExitedEvent(GameEvent gameEvent)
         {
-            if (gameEvent is InteractionAreaExitedEvent interactionAreaExitedEvent)
+            if (gameEvent is InteractionAreaExitedEvent)
             {
                 SetPromptTextActive(false);
-                
-                IInteractionArea interactionArea = interactionAreaExitedEvent.InteractionArea;
-
-                SetPromptTextPosition(interactionArea.PointTransform);
             }
         }
 
@@ -72,21 +59,6 @@ namespace BlueGravity.UI.Screens
             GameObject promptObject = _promptText.gameObject;
             
             promptObject.SetActive(isActive);
-        }
-
-        private void SetPromptTextPosition(Transform targetTransform)
-        {
-            Transform promptTransform = _promptText.transform;
-
-            Camera mainCamera = _cameraService.MainCamera;
-            Vector3 targetScreenPosition = mainCamera.WorldToScreenPoint(targetTransform.position);
-            
-            Vector3 newPosition = new Vector3(
-                targetScreenPosition.x + _promptTextOffset.x, 
-                targetScreenPosition.y + _promptTextOffset.y,
-                targetScreenPosition.z + _promptTextOffset.z);
-
-            promptTransform.position = newPosition;
         }
     }
 }

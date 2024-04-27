@@ -28,8 +28,10 @@ namespace BlueGravity.Gameplay.Playing
             
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
             _characterInteraction.Begin(inputService, eventService, _interactionArea);
-            
+
             _characterView.Setup(eventService);
+
+            _characterInteraction.OnInteractShopKeeper += HandleInteractShopKeeper;
         }
 
         protected override void OnStop()
@@ -39,6 +41,8 @@ namespace BlueGravity.Gameplay.Playing
             _characterMovement.Stop();
 
             _characterView.Dispose();
+            
+            _characterInteraction.OnInteractShopKeeper -= HandleInteractShopKeeper;
         }
 
         protected override void OnTick(float deltaTime)
@@ -56,6 +60,13 @@ namespace BlueGravity.Gameplay.Playing
             base.OnFixedTick(fixedDeltaTime);
             
             _characterMovement.FixedTick(fixedDeltaTime);
+        }
+
+        private void HandleInteractShopKeeper()
+        {
+            _characterMovement.Stop();
+            
+            _characterView.Reset();
         }
     }
 }

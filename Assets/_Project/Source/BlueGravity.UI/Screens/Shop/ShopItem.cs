@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 namespace BlueGravity.UI.Screens.Shop
 {
-    public sealed class ShopItem : Entity
+    public sealed class ShopItem : MonoBehaviour
     {
-        public event Action<BodyPartData> OnItemBought;
+        public event Action<BodyPartData> OnItemButtonClicked;
         
         [SerializeField]
         private Button _button;
@@ -19,18 +19,11 @@ namespace BlueGravity.UI.Screens.Shop
         private BodyPartData _bodyPartData;
         private bool _isNone;
 
-        public void Begin(BodyPartData bodyPartData, bool isNone)
+        public void Setup(BodyPartData bodyPartData, bool isNone)
         {
             _bodyPartData = bodyPartData;
             _isNone = isNone;
-
-            base.Begin();
-        }
-
-        protected override void OnBegin()
-        {
-            base.OnBegin();
-
+            
             _button.onClick.AddListener(HandleButtonClick);
 
             if (_isNone)
@@ -44,16 +37,14 @@ namespace BlueGravity.UI.Screens.Shop
             _itemImage.SetNativeSize();
         }
 
-        protected override void OnStop()
+        public void Dispose()
         {
-            base.OnStop();
-            
             _button.onClick.RemoveListener(HandleButtonClick);
         }
 
         private void HandleButtonClick()
         {
-            OnItemBought?.Invoke(_bodyPartData);
+            OnItemButtonClicked?.Invoke(_bodyPartData);
         }
     }
 }
