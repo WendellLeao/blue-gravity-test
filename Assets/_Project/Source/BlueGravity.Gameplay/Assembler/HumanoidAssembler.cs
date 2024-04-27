@@ -40,37 +40,19 @@ namespace BlueGravity.Gameplay.Assembler
 
         private void OverrideAnimationClips(BodyPartClipsCollection clipsCollection)
         {
-            AnimationClip[] animatorAnimationClips = _animatorOverrideController.animationClips;
-            
-            for (int i = 0; i < animatorAnimationClips.Length; i++)
-            {
-                AnimationClip animatorClip = animatorAnimationClips[i];
-
-                AnimationClip clip = CompareNamesAndGetClipToOverride(clipsCollection, animatorClip.name);
-
-                animatorAnimationClips[i] = clip;
-            }
-        }
-
-        private AnimationClip CompareNamesAndGetClipToOverride(BodyPartClipsCollection clipsCollection, string animatorClipName)
-        {
             AnimationClip[] animationClips = clipsCollection.AnimationClips;
-
+            
             for (int i = 0; i < animationClips.Length; i++)
             {
                 AnimationClip animationClip = animationClips[i];
 
-                string subName = animatorClipName.Substring(0, animatorClipName.Length - 1);
+                string clipName = animationClip.name;
+                string clipNameSub = clipName.Substring(clipName.IndexOf("_"));
 
-                if (!animationClip.name.Contains(subName))
-                {
-                    continue;
-                }
-                
-                return animationClip;
+                _animatorOverrideController[clipName] = animationClip;
+
+                Debug.Log(clipNameSub);
             }
-
-            return null;
         }
     }
 }

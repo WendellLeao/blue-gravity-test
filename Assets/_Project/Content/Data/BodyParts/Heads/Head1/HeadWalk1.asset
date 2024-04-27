@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416f537e601b489094f116d9b13adbeb, type: 3}
+  m_Name: HeadWalk1
+  m_EditorClassIdentifier: 
+  _animationClips:
+  - {fileID: 7400000, guid: c2e332b41e0a2524ea96eda3273540f6, type: 2}
+  - {fileID: 7400000, guid: b0787294b8132e44bb83f1789d828ad8, type: 2}
+  - {fileID: 7400000, guid: 8353ce7b908149d4995fc7fd4e737610, type: 2}
+  - {fileID: 7400000, guid: d614ef469ea86de4b89428873cc956e2, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Head1
   m_EditorClassIdentifier: 
   _id: head_1
-  _displaySprite: {fileID: 216993263, guid: 1fd54e5092b9116488f2f08a363ed648, type: 3}
+  _displaySprite: {fileID: 477754407, guid: f68ac5209b6e7e148b71b8b2c3ba03ab, type: 3}
   _clipsCollections:
-  - {fileID: 11400000, guid: 20118c6a99dc7dd4e8b4797f7504f7b5, type: 2}
-  - {fileID: 11400000, guid: 8be8ebd40431c0543885cf70847de2d5, type: 2}
+  - {fileID: 11400000, guid: 913a24ed2a0b8574390d36b67e481c7f, type: 2}
+  - {fileID: 11400000, guid: db80eb00ac4bf4e42b94bfaf4fd0ae59, type: 2}

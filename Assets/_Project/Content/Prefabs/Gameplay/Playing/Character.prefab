@@ -128,9 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bodyParts:
   - {fileID: 11400000, guid: c88d073e83a0b1a4a896948925f32ffa, type: 2}
-  - {fileID: 11400000, guid: 7485673e0a0847242a56f797eaaa64fc, type: 2}
-  - {fileID: 11400000, guid: b8c34f57a883197498d7816eaab12a31, type: 2}
-  _animator: {fileID: 2990712085004172933}
+  - {fileID: 11400000, guid: ad4bd252c31808441baedd13e861f05f, type: 2}
+  - {fileID: 11400000, guid: a62f8e43b673bd84090c46858f6cd677, type: 2}
   _animatorOverrideController: {fileID: 22100000, guid: 8abf0d226af406f47b650b4a5d37fd96, type: 2}
 --- !u!114 &7146094547700962469
 MonoBehaviour:

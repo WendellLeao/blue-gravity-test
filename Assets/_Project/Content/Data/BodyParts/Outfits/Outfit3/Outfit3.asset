@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Outfit3
   m_EditorClassIdentifier: 
   _id: outfit_3
-  _displaySprite: {fileID: -1396697015, guid: cb010a5a441191f4691a0877ec7062e8, type: 3}
+  _displaySprite: {fileID: 1596556404, guid: 43213bd0b10d0f940afe72a9cf2597b3, type: 3}
   _clipsCollections:
-  - {fileID: 11400000, guid: 9aca325d199c3d342ab3c0f27c759756, type: 2}
-  - {fileID: 11400000, guid: e2eb0b6f9b01dfa47bdf6f83e67349cc, type: 2}
+  - {fileID: 11400000, guid: c61f4e3c7b3be0e4fa2c1483cc457b8b, type: 2}
+  - {fileID: 11400000, guid: 30c2044e1f39e6a44bcb674036d96ec9, type: 2}
