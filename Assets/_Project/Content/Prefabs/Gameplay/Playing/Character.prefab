@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 656075382914858714, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+      propertyPath: m_Name
+      value: CharacterView
+      objectReference: {fileID: 0}
     - target: {fileID: 6660380855939762196, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,3 +61,97 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+--- !u!4 &741633887714614804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6660380855939762196, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+  m_PrefabInstance: {fileID: 6207294057564411392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &741633887714614807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6660380855939762199, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+  m_PrefabInstance: {fileID: 6207294057564411392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159771040441847791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741633887714614807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b592cc3ada8b3149b2d732407d46cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointTransform: {fileID: 741633887714614804}
+  _interactionRadius: 4
+--- !u!114 &1499224094101345868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741633887714614807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0bfa68a713436d941d5962e9e7f4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5967615114200254975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741633887714614807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a81faec3e034facbbafad32f7726275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 5
+--- !u!114 &7146094547700962469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741633887714614807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d95d00559447148088629197d6f9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidBody: {fileID: 3631432574739580564}
+  _characterMovement: {fileID: 5967615114200254975}
+  _characterInteraction: {fileID: 1499224094101345868}
+  _interactionArea: {fileID: 1159771040441847791}
+  _characterView: {fileID: 3926360606394352878}
+--- !u!95 &2990712085004172933 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9197926887402317957, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+  m_PrefabInstance: {fileID: 6207294057564411392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &3631432574739580564 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7224281368764059796, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+  m_PrefabInstance: {fileID: 6207294057564411392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6863032951249152218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 656075382914858714, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}
+  m_PrefabInstance: {fileID: 6207294057564411392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3926360606394352878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863032951249152218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa448f42c944de79d46d407572125b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2990712085004172933}

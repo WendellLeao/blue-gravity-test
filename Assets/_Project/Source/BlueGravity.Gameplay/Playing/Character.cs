@@ -9,13 +9,13 @@ namespace BlueGravity.Gameplay.Playing
     public sealed class Character : Entity
     {
         [SerializeField]
+        private Rigidbody2D _rigidBody;
+        [SerializeField]
         private CharacterMovement _characterMovement;
         [SerializeField]
         private CharacterInteraction _characterInteraction;
         [SerializeField]
         private InteractionArea _interactionArea;
-        [SerializeField]
-        private Rigidbody2D _rigidBody;
         [SerializeField]
         private CharacterView _characterView;
         
