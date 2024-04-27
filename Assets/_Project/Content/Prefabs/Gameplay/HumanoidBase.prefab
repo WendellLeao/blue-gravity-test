@@ -66,6 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7513670597497445456}
   - component: {fileID: 2892902867097398854}
+  - component: {fileID: 6460189579607848750}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -140,6 +141,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6460189579607848750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047572698548592136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605f26e7f6194acd9e044573037ab0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2892902867097398854}
+  _category: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
 --- !u!1 &2096819536822144520
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6033546995297863402}
   - component: {fileID: 4082396607575219527}
+  - component: {fileID: 8555815890575255265}
   m_Layer: 0
   m_Name: Outfit
   m_TagString: Untagged
@@ -224,6 +240,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8555815890575255265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096819536822144520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605f26e7f6194acd9e044573037ab0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 4082396607575219527}
+  _category: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
 --- !u!1 &6660380855939762199
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838478523457886274}
   - component: {fileID: 2655717821750667665}
+  - component: {fileID: 2956548563336534665}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -378,8 +409,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 216993263, guid: 1fd54e5092b9116488f2f08a363ed648, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2069844797, guid: 0939241016d0d7444812fe6631084050, type: 3}
+  m_Color: {r: 0.20754719, g: 0.15566039, b: 0.15566039, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -389,6 +420,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2956548563336534665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144495847536152834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605f26e7f6194acd9e044573037ab0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2655717821750667665}
+  _category: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
 --- !u!1 &8618435527810320139
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961316602448699878}
   - component: {fileID: 7796738572465263422}
+  - component: {fileID: 7682100788311124011}
   m_Layer: 0
   m_Name: Hat
   m_TagString: Untagged
@@ -473,3 +519,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7682100788311124011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618435527810320139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605f26e7f6194acd9e044573037ab0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 7796738572465263422}
+  _category: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}

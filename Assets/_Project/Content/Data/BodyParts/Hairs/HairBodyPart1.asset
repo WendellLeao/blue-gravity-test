@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: HairBodyPart1
   m_EditorClassIdentifier: 
   _id: hair_body_part_1
-  _displaySprite: {fileID: -2069844797, guid: 0939241016d0d7444812fe6631084050, type: 3}
+  _displaySprite: {fileID: 1096973464, guid: e92d7d2bf7c228d4eb45c1700e501189, type: 3}
   _animationClips:
-  - {fileID: 7400000, guid: b62361564dd676641b74695dce4064c6, type: 2}
-  - {fileID: 7400000, guid: e277c5d2ddb80364bae37ade89d0bbe6, type: 2}
-  - {fileID: 7400000, guid: 4200d400bb775d4499580302a73c82dc, type: 2}
-  - {fileID: 7400000, guid: 7b329de39a6e79343a1a034e767e99b9, type: 2}
-  - {fileID: 7400000, guid: 37b09bf79f0ecf64a8fb7819ae6b5910, type: 2}
-  - {fileID: 7400000, guid: 05f20376d97a1744bb2f5a48bd3f650b, type: 2}
-  - {fileID: 7400000, guid: 51d61cffabc893c43a14ffd514b58c27, type: 2}
-  - {fileID: 7400000, guid: 77965f332313dc7419d6d27c1a00ea06, type: 2}
+  - {fileID: 7400000, guid: 0d779e16b62c3fb49bb7e78bce62b0a8, type: 2}
+  - {fileID: 7400000, guid: 6ff82e21e6562c246a226e65046317a9, type: 2}
+  - {fileID: 7400000, guid: bcccc5e3347f7c74ba74a71920f1899c, type: 2}
+  - {fileID: 7400000, guid: 4f768183e2c572740bd6cfe0e8013cf1, type: 2}
+  - {fileID: 7400000, guid: cb79dfab231c4ce4085cf0d5125264c1, type: 2}
+  - {fileID: 7400000, guid: b297f36835c1d8a4ba2969888a7caea6, type: 2}
+  - {fileID: 7400000, guid: 01746f95be7881341bb2b74c114ec015, type: 2}
+  - {fileID: 7400000, guid: 237ee040d6ae50c4d9e25f6d3db5edd9, type: 2}

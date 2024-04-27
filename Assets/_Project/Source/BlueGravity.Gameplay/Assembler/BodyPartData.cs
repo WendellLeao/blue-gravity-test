@@ -1,0 +1,21 @@
+using UnityEngine;
+
+namespace BlueGravity.Gameplay.Assembler
+{
+    [CreateAssetMenu(menuName = "BlueGravity/HumanoidAssembler/BodyPartData", fileName = "NewBodyPartData")]
+    public sealed class BodyPartData : ScriptableObject
+    {
+        [SerializeField]
+        private string _id;
+        [SerializeField]
+        private Sprite _displaySprite;
+        [SerializeField]
+        private AnimationClip[] _animationClips;
+        [SerializeField]
+        private bool _isVisible = true;
+
+        public Sprite DisplaySprite => _displaySprite;
+        public AnimationClip[] AnimationClips => _animationClips;
+        public bool IsVisible => _isVisible;
+    }
+}

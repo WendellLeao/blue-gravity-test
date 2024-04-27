@@ -6,7 +6,9 @@ namespace BlueGravity.Gameplay.Assembler
     public sealed class HumanoidAssembler : EntityComponent
     {
         [SerializeField]
-        private BodyPartsCollection _bodyPartsCollection;
+        private BodyPart[] _bodyParts;
+        [SerializeField]
+        private BodyPartsCollection _partsCollection;
         
         private Animator _animator;
         private AnimatorOverrideController _animatorOverrideController;
@@ -24,63 +26,27 @@ namespace BlueGravity.Gameplay.Assembler
             
             SetRuntimeAnimatorController();
             
-            UpdateBodyParts();
+            BeginBodyParts();
         }
 
-        protected override void OnTick(float deltaTime)
+        private void BeginBodyParts()
         {
-            base.OnTick(deltaTime);
+            for (int i = 0; i < _bodyParts.Length; i++)
+            {
+                BodyPart bodyPart = _bodyParts[i];
 
-#if DEBUG
-            if (UnityEngine.Input.GetKeyDown(KeyCode.I))
-            {
-                BodyPart[] allHairs = _bodyPartsCollection.AllHairs;
-                
-                int randomNumber = Random.Range(0, allHairs.Length);
-                
-                BodyPart randomHair = allHairs[randomNumber];
-                
-                OverrideAnimatorAnimationClips(randomHair);
+                if (_partsCollection.TryGetDefaultBodyPartByCategoryId(bodyPart.CategoryId, out BodyPartData data))
+                {
+                    bodyPart.Begin(data);
+                    
+                    OverrideAnimatorAnimationClips(data);
+                }
             }
-            
-            if (UnityEngine.Input.GetKeyDown(KeyCode.O))
-            {
-                BodyPart[] allHeads = _bodyPartsCollection.AllHats;
-                
-                int randomNumber = Random.Range(0, allHeads.Length);
-                
-                BodyPart randomHead = allHeads[randomNumber];
-                
-                OverrideAnimatorAnimationClips(randomHead);
-            }
-
-            if (UnityEngine.Input.GetKeyDown(KeyCode.P))
-            {
-                BodyPart[] allOutfits = _bodyPartsCollection.AllOutfits;
-                
-                int randomNumber = Random.Range(0, allOutfits.Length);
-                
-                BodyPart randomOutfit = allOutfits[randomNumber];
-                
-                OverrideAnimatorAnimationClips(randomOutfit);
-            }
-#endif
         }
 
-        private void UpdateBodyParts()
+        private void OverrideAnimatorAnimationClips(BodyPartData bodyPartData)
         {
-            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultBody);
-
-            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultOutfit);
-
-            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultHair);
-            
-            OverrideAnimatorAnimationClips(_bodyPartsCollection.DefaultHat);
-        }
-
-        private void OverrideAnimatorAnimationClips(BodyPart bodyPart)
-        {
-            AnimationClip[] animationClips = bodyPart.AnimationClips;
+            AnimationClip[] animationClips = bodyPartData.AnimationClips;
         
             for (int i = 0; i < animationClips.Length; i++)
             {
@@ -92,13 +58,6 @@ namespace BlueGravity.Gameplay.Assembler
             }
         }
         
-        private void SetRuntimeAnimatorController()
-        {
-            _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
-
-            _animator.runtimeAnimatorController = _animatorOverrideController;
-        }
-
         private string GetSubClipName(string clipName)
         {
             char targetChar = '_';
@@ -113,6 +72,13 @@ namespace BlueGravity.Gameplay.Assembler
             }
             
             return clipName.Substring(0, clipName.LastIndexOf(targetChar));
+        }
+
+        private void SetRuntimeAnimatorController()
+        {
+            _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
+
+            _animator.runtimeAnimatorController = _animatorOverrideController;
         }
     }
 }

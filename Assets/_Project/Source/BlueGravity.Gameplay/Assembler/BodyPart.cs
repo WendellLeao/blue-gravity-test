@@ -2,18 +2,29 @@ using UnityEngine;
 
 namespace BlueGravity.Gameplay.Assembler
 {
-    [CreateAssetMenu(menuName = "BlueGravity/HumanoidAssembler/BodyPart", fileName = "NewBodyPart")]
-    public sealed class BodyPart : ScriptableObject
+    public sealed class BodyPart : EntityComponent
     {
         [SerializeField]
-        private string _id;
+        private SpriteRenderer _spriteRenderer;
         [SerializeField]
-        private Sprite _displaySprite;
-        [SerializeField]
-        private AnimationClip[] _animationClips;
+        private BodyPartCategory _category;
 
-        public string Id => _id;
-        public Sprite DisplaySprite => _displaySprite;
-        public AnimationClip[] AnimationClips => _animationClips;
+        private BodyPartData _data;
+
+        public string CategoryId => _category.Id;
+
+        public void Begin(BodyPartData data)
+        {
+            _data = data;
+            
+            base.Begin();
+        }
+
+        protected override void OnBegin()
+        {
+            base.OnBegin();
+
+            _spriteRenderer.enabled = _data.IsVisible;
+        }
     }
 }
