@@ -10,6 +10,8 @@ namespace BlueGravity.UI.Screens.Shop
         [SerializeField]
         private ShopSection[] _sections;
         [SerializeField]
+        private ShopTabButton[] _shopTabButtons;
+        [SerializeField]
         private BodyPartsCollectionData _partsCollection;
 
         private IEventService _eventService;
@@ -19,8 +21,10 @@ namespace BlueGravity.UI.Screens.Shop
             base.OnInitialize();
 
             _eventService = ServiceLocator.GetService<IEventService>();
-            
+
             BeginAndPopulateShopSections();
+
+            BeginTabButtons();
         }
 
         protected override void OnDispose()
@@ -28,6 +32,8 @@ namespace BlueGravity.UI.Screens.Shop
             base.OnDispose();
 
             StopSections();
+
+            StopTabButtons();
         }
 
         private void BeginAndPopulateShopSections()
@@ -59,6 +65,30 @@ namespace BlueGravity.UI.Screens.Shop
             }
         }
 
+        private void BeginTabButtons()
+        {
+            for (int i = 0; i < _shopTabButtons.Length; i++)
+            {
+                ShopTabButton tabButton = _shopTabButtons[i];
+
+                tabButton.OnButtonClick += HandleTabButtonClick;
+                
+                tabButton.Begin(_sections[i]);
+            }
+        }
+
+        private void HandleTabButtonClick(IShopSection clickedSection)
+        {
+            for (int i = 0; i < _sections.Length; i++)
+            {
+                ShopSection section = _sections[i];
+                
+                section.Close();
+            }
+            
+            clickedSection.Open();
+        }
+        
         private void StopSections()
         {
             for (int i = 0; i < _sections.Length; i++)
@@ -66,6 +96,18 @@ namespace BlueGravity.UI.Screens.Shop
                 ShopSection section = _sections[i];
                 
                 section.Stop();
+            }
+        }
+        
+        private void StopTabButtons()
+        {
+            for (int i = 0; i < _shopTabButtons.Length; i++)
+            {
+                ShopTabButton tabButton = _shopTabButtons[i];
+                
+                tabButton.OnButtonClick -= HandleTabButtonClick;
+                
+                tabButton.Stop();
             }
         }
     }

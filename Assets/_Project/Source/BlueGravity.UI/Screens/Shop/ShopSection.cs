@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BlueGravity.UI.Screens.Shop
 {
-    public sealed class ShopSection : EntityComponent
+    public sealed class ShopSection : EntityComponent, IShopSection
     {
         [SerializeField]
         private ShopItem _shopItemPrefab;
@@ -28,6 +28,16 @@ namespace BlueGravity.UI.Screens.Shop
             base.Begin();
         }
         
+        public void Open()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Close()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void PopulateGridLayoutGroup(BodyPartData[] bodyParts, bool hasNone)
         {
             if (hasNone)

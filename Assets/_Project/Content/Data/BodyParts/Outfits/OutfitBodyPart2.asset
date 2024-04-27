@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: outfit_body_part_2
   _categoryData: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
-  _displaySprite: {fileID: -1396697015, guid: cb010a5a441191f4691a0877ec7062e8, type: 3}
+  _displaySprite: {fileID: 1596556404, guid: 43213bd0b10d0f940afe72a9cf2597b3, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: c1b88975cb9aa3b4b916e656947b67a2, type: 2}
   - {fileID: 7400000, guid: 6d2fc9babced3de4f8e4a1ab395dd52e, type: 2}
