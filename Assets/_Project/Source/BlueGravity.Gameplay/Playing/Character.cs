@@ -82,6 +82,8 @@ namespace BlueGravity.Gameplay.Playing
             if (gameEvent is InteractShopKeeperEndedEvent)
             {
                 _characterMovement.Begin();
+
+                _characterInteraction.StopCurrentInteraction();
             }
         }
     }

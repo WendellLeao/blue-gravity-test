@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 917291349}
     m_Modifications:
     - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
+      propertyPath: _bodyPartNone
+      value: 
+      objectReference: {fileID: 11400000, guid: f672e836fd5ec5a458700d2a5d3f2850, type: 2}
+    - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
       propertyPath: _bodyPartCategoryData
       value: 
       objectReference: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
@@ -2879,6 +2883,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 917291349}
     m_Modifications:
+    - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
+      propertyPath: _bodyPartNone
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cadd0c9992a95a41b4b58afa8ffe377, type: 2}
+    - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
+      propertyPath: _bodyPartCategoryData
+      value: 
+      objectReference: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
     - target: {fileID: 3852577217587518022, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4504,6 +4516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 917291349}
     m_Modifications:
+    - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
+      propertyPath: _bodyPartNone
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e0f4faf00420f546bc704c74db11850, type: 2}
     - target: {fileID: 3852577217587518019, guid: 571779898a299c64eae01eae9e057fc1, type: 3}
       propertyPath: _bodyPartCategoryData
       value: 

@@ -34,7 +34,6 @@ namespace BlueGravity.UI.Screens.Shop
             }
 
             _itemImage.sprite = _bodyPartData.DisplaySprite;
-            _itemImage.SetNativeSize();
         }
 
         public void Dispose()

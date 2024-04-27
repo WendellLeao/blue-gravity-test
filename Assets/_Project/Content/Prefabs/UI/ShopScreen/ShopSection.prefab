@@ -170,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shopItemPrefab: {fileID: 1850093074741815549, guid: b4400ced6c3c7dd488ff9cc382ed5207, type: 3}
   _contentTransform: {fileID: 3852577217811763024}
-  _bodyPartCategoryData: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
-  _bodyPartNone: {fileID: 11400000, guid: 8e0f4faf00420f546bc704c74db11850, type: 2}
+  _bodyPartCategoryData: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
+  _bodyPartNone: {fileID: 11400000, guid: 53b985511c98c0241abe4eb2e7bc792f, type: 2}
 --- !u!1 &3852577217811763025
 GameObject:
   m_ObjectHideFlags: 0

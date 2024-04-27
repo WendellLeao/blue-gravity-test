@@ -32,6 +32,10 @@ namespace BlueGravity.Gameplay.Playing
         protected override void OnStop()
         {
             _inputService.OnReadInputs -= HandleReadInputs;
+            
+            _normalizedMovement = Vector2.zero;
+            
+            HandleVelocity();
         }
 
         protected override void OnFixedTick(float fixedDeltaTime)

@@ -1,6 +1,7 @@
 using BlueGravity.Events;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.Input;
+using NotImplementedException = System.NotImplementedException;
 
 namespace BlueGravity.Gameplay.Playing
 {
@@ -11,6 +12,7 @@ namespace BlueGravity.Gameplay.Playing
         private IInteractionArea _interactionArea;
         private IInteractable _interactable;
         private bool _hasInteractableNearby;
+        private bool _isInteracting;
 
         public void Begin(IInputService inputService, IEventService eventService, IInteractionArea interactionArea)
         {
@@ -37,13 +39,18 @@ namespace BlueGravity.Gameplay.Playing
         {
             base.OnTick(deltaTime);
 
-            HandleInteractableObjectsNearby();
+            if (!_isInteracting)
+            {
+                HandleInteractableObjectsNearby();
+            }
         }
 
         private void HandleReadInputs(InputsData inputsData)
         {
             if (_hasInteractableNearby && inputsData.PressInteract)
             {
+                _isInteracting = true;
+                
                 _interactable.TryInteract(_interactionArea);
             }
         }
@@ -70,6 +77,13 @@ namespace BlueGravity.Gameplay.Playing
                 
                 _eventService.DispatchEvent(new InteractionAreaExitedEvent(_interactable, _interactionArea));
             }
+        }
+
+        public void StopCurrentInteraction()
+        {
+            _isInteracting = false;
+            
+            _interactable.StopInteraction();
         }
     }
 }

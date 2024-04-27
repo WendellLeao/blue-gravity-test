@@ -70,10 +70,10 @@ namespace BlueGravity.Gameplay.Playing
         
         private void HandleBodyPartSoldEvent(GameEvent gameEvent)
         {
-            if (gameEvent is BodyPartBoughtEvent bodyPartBoughtEvent)
+            if (gameEvent is BodyPartSoldEvent bodyPartBoughtEvent)
             {
                 BodyPartData bodyPartData = bodyPartBoughtEvent.BodyPartData;
-                
+
                 _humanoidAssembler.EquipBodyPart(bodyPartData.CategoryData.DefaultBodyPart);
             }
         }
