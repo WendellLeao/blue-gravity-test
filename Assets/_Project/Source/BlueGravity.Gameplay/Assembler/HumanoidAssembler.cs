@@ -6,13 +6,23 @@ namespace BlueGravity.Gameplay.Assembler
     {
         [SerializeField]
         private BodyPart[] _bodyParts;
-        [SerializeField]
+
+        private Animator _animator;
         private AnimatorOverrideController _animatorOverrideController;
 
+        public void Begin(Animator animator)
+        {
+            _animator = animator;
+            
+            base.Begin();
+        }
+        
         protected override void OnBegin()
         {
             base.OnBegin();
-
+            
+            SetRuntimeAnimatorController();
+            
             UpdateBodyParts();
         }
 
@@ -47,12 +57,19 @@ namespace BlueGravity.Gameplay.Assembler
                 AnimationClip animationClip = animationClips[i];
 
                 string clipName = animationClip.name;
-                string clipNameSub = clipName.Substring(clipName.IndexOf("_"));
+                string clipNameSub = clipName.Substring(0, clipName.LastIndexOf("_"));
 
-                _animatorOverrideController[clipName] = animationClip;
-
-                Debug.Log(clipNameSub);
+                Debug.Log($"ClipName: {clipName} | ClipNameSub: {clipNameSub}");
+                
+                _animatorOverrideController[clipNameSub] = animationClip;
             }
+        }
+        
+        private void SetRuntimeAnimatorController()
+        {
+            _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
+
+            _animator.runtimeAnimatorController = _animatorOverrideController;
         }
     }
 }

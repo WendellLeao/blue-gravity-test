@@ -1,3 +1,4 @@
+using BlueGravity.Gameplay.Assembler;
 using UnityEngine;
 
 namespace BlueGravity.Gameplay.Playing
@@ -6,13 +7,29 @@ namespace BlueGravity.Gameplay.Playing
     {
         [SerializeField]
         private Animator _animator;
+        [SerializeField]
+        private HumanoidAssembler _humanoidAssembler;
 
         private static readonly int IsIdle = Animator.StringToHash("IsIdle");
         private static readonly int HorizontalMovement = Animator.StringToHash("HorizontalMovement");
         private static readonly int VerticalMovement = Animator.StringToHash("VerticalMovement");
 
         private Vector2 _normalizedMovement;
-        
+
+        protected override void OnSetup()
+        {
+            base.OnSetup();
+
+            _humanoidAssembler.Begin(_animator);
+        }
+
+        protected override void OnDispose()
+        {
+            base.OnDispose();
+            
+            _humanoidAssembler.Stop();
+        }
+
         public void SetNormalizedMovement(Vector2 movement)
         {
             _normalizedMovement = movement;

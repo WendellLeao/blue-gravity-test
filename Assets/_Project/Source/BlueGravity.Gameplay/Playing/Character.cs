@@ -1,5 +1,4 @@
 using BlueGravity.Events;
-using BlueGravity.Gameplay.Assembler;
 using BlueGravity.Gameplay.Interaction;
 using BlueGravity.Input;
 using BlueGravity.Services;
@@ -18,8 +17,6 @@ namespace BlueGravity.Gameplay.Playing
         [SerializeField]
         private InteractionArea _interactionArea;
         [SerializeField]
-        private HumanoidAssembler _humanoidAssembler;
-        [SerializeField]
         private CharacterView _characterView;
         
         protected override void OnBegin()
@@ -31,7 +28,6 @@ namespace BlueGravity.Gameplay.Playing
             
             _characterMovement.Begin(inputService, _characterView, _rigidBody);
             _characterInteraction.Begin(inputService, eventService, _interactionArea);
-            _humanoidAssembler.Begin();
             
             _characterView.Setup();
         }
@@ -41,7 +37,6 @@ namespace BlueGravity.Gameplay.Playing
             base.OnStop();
             
             _characterMovement.Stop();
-            _humanoidAssembler.Stop();
 
             _characterView.Dispose();
         }
