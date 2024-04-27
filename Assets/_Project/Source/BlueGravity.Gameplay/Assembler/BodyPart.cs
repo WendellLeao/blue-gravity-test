@@ -10,10 +10,10 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private Sprite _displaySprite;
         [SerializeField]
-        private BodyPartClipsCollection[] _clipsCollections;
+        private AnimationClip[] _animationClips;
 
         public string Id => _id;
         public Sprite DisplaySprite => _displaySprite;
-        public BodyPartClipsCollection[] ClipsCollections => _clipsCollections;
+        public AnimationClip[] AnimationClips => _animationClips;
     }
 }

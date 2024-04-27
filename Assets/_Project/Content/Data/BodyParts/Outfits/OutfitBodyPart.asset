@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 416f537e601b489094f116d9b13adbeb, type: 3}
-  m_Name: OutfitIdle
+  m_Script: {fileID: 11500000, guid: 59a1b3713a86be34cb0f6b21c423693e, type: 3}
+  m_Name: OutfitBodyPart
   m_EditorClassIdentifier: 
+  _id: outfit_body_part
+  _displaySprite: {fileID: -2057870041, guid: 87eb8845f2f81924faa1276384a8b74d, type: 3}
   _animationClips:
   - {fileID: 7400000, guid: 5967bdf01da4d5547af0d3a137b10a78, type: 2}
   - {fileID: 7400000, guid: 45dfde0c9ceb06045839bff4c9b99230, type: 2}
   - {fileID: 7400000, guid: 3ba5fdad3b3c5374b80dd8dea9688454, type: 2}
   - {fileID: 7400000, guid: af1ada81e4f376549969836e2b3731b1, type: 2}
+  - {fileID: 7400000, guid: 9a10119c2766b2a41a4ddd36daeac643, type: 2}
+  - {fileID: 7400000, guid: 9f9cb26da7cda2a4782ec8223418126b, type: 2}
+  - {fileID: 7400000, guid: 1ca9e2001da86234b85fd5197e587ed9, type: 2}
+  - {fileID: 7400000, guid: 1be269822da1c814899bcbf4cca423ce, type: 2}

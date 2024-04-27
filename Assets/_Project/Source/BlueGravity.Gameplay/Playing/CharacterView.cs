@@ -30,6 +30,13 @@ namespace BlueGravity.Gameplay.Playing
             _humanoidAssembler.Stop();
         }
 
+        protected override void OnTick(float deltaTime)
+        {
+            base.OnTick(deltaTime);
+            
+            _humanoidAssembler.Tick(deltaTime);
+        }
+
         public void SetNormalizedMovement(Vector2 movement)
         {
             _normalizedMovement = movement;
