@@ -3,14 +3,14 @@ using UnityEngine;
 namespace BlueGravity.Gameplay.Assembler
 {
     [CreateAssetMenu(menuName = "BlueGravity/HumanoidAssembler/BodyPartsGroup", fileName = "NewBodyPartsGroup")]
-    public sealed class BodyPartsGroup : ScriptableObject
+    public sealed class BodyPartsGroupData : ScriptableObject
     {
         [SerializeField]
-        private BodyPartCategory _bodyPartCategory;
+        private BodyPartCategoryData _bodyPartCategoryData;
         [SerializeField]
         private BodyPartData[] _bodyPartsData;
 
-        public BodyPartCategory Category => _bodyPartCategory;
+        public BodyPartCategoryData CategoryData => _bodyPartCategoryData;
         public BodyPartData[] BodyPartsData => _bodyPartsData;
     }
 }

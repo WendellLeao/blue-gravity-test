@@ -206,7 +206,7 @@ MonoBehaviour:
   - {fileID: 2348873728422867169}
   - {fileID: 9161298344400161929}
   - {fileID: 4375511994213432875}
-  _partsCollection: {fileID: 11400000, guid: db4ec5e1259de604cb7ed45a26a5a0a1, type: 2}
+  _partsCollectionData: {fileID: 11400000, guid: db4ec5e1259de604cb7ed45a26a5a0a1, type: 2}
 --- !u!114 &9161298344400161929 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2956548563336534665, guid: 9f9bab299eb832d47bd62046ab973037, type: 3}

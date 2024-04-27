@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca883c7f9df84b2d855de7eb34d92351, type: 3}
   m_Name: OutfitPartsGroup
   m_EditorClassIdentifier: 
-  _bodyPartCategory: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
+  _bodyPartCategoryData: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
   _bodyPartsData:
   - {fileID: 11400000, guid: 99931e40367e2dd4382dccfab604aead, type: 2}
   - {fileID: 11400000, guid: b8c34f57a883197498d7816eaab12a31, type: 2}

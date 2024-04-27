@@ -8,7 +8,7 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private BodyPart[] _bodyParts;
         [SerializeField]
-        private BodyPartsCollection _partsCollection;
+        private BodyPartsCollectionData _partsCollectionData;
         
         private Animator _animator;
         private AnimatorOverrideController _animatorOverrideController;
@@ -35,7 +35,7 @@ namespace BlueGravity.Gameplay.Assembler
             {
                 BodyPart bodyPart = _bodyParts[i];
 
-                if (_partsCollection.TryGetDefaultBodyPartByCategoryId(bodyPart.CategoryId, out BodyPartData data))
+                if (_partsCollectionData.TryGetDefaultBodyPartByCategoryId(bodyPart.CategoryId, out BodyPartData data))
                 {
                     bodyPart.Begin(data);
                     

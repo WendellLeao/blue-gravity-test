@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca883c7f9df84b2d855de7eb34d92351, type: 3}
   m_Name: BodyPartsGroup
   m_EditorClassIdentifier: 
-  _bodyPartCategory: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
+  _bodyPartCategoryData: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
   _bodyPartsData:
   - {fileID: 11400000, guid: c88d073e83a0b1a4a896948925f32ffa, type: 2}

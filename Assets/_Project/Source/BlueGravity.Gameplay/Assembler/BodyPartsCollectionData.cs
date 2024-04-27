@@ -3,22 +3,22 @@ using UnityEngine;
 namespace BlueGravity.Gameplay.Assembler
 {
     [CreateAssetMenu(menuName = "BlueGravity/HumanoidAssembler/BodyPartsCollection", fileName = "NewBodyPartsCollection")]
-    public sealed class BodyPartsCollection : ScriptableObject
+    public sealed class BodyPartsCollectionData : ScriptableObject
     {
         [SerializeField]
-        private BodyPartsGroup[] _bodyPartsGroups;
+        private BodyPartsGroupData[] _bodyPartsGroups;
 
         public bool TryGetDefaultBodyPartByCategoryId(string id, out BodyPartData bodyPartData)
         {
             for (int i = 0; i < _bodyPartsGroups.Length; i++)
             {
-                BodyPartsGroup partData = _bodyPartsGroups[i];
+                BodyPartsGroupData partData = _bodyPartsGroups[i];
 
-                string categoryId = partData.Category.Id;
+                string categoryId = partData.CategoryData.Id;
                 
                 if (categoryId.Contains(id))
                 {
-                    bodyPartData = partData.Category.DefaultBodyPart;
+                    bodyPartData = partData.CategoryData.DefaultBodyPart;
                     return true;
                 }
             }

@@ -7,11 +7,11 @@ namespace BlueGravity.Gameplay.Assembler
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
         [SerializeField]
-        private BodyPartCategory _category;
+        private BodyPartCategoryData _categoryData;
 
         private BodyPartData _data;
 
-        public string CategoryId => _category.Id;
+        public string CategoryId => _categoryData.Id;
 
         public void Begin(BodyPartData data)
         {

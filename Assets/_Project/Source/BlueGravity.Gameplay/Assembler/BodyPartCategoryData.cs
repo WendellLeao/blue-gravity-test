@@ -3,7 +3,7 @@ using UnityEngine;
 namespace BlueGravity.Gameplay.Assembler
 {
     [CreateAssetMenu(menuName = "BlueGravity/HumanoidAssembler/BodyPartCategory", fileName = "NewBodyPartCategory")]
-    public sealed class BodyPartCategory : ScriptableObject
+    public sealed class BodyPartCategoryData : ScriptableObject
     {
         [SerializeField]
         private string _id;

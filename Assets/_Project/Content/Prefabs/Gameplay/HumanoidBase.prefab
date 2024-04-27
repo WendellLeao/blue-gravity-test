@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 2892902867097398854}
-  _category: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
+  _categoryData: {fileID: 11400000, guid: 08edc16e08e2a1844a602022e9623802, type: 2}
 --- !u!1 &2096819536822144520
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 4082396607575219527}
-  _category: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
+  _categoryData: {fileID: 11400000, guid: c72abbfb1651f424eaff1b30004e21a7, type: 2}
 --- !u!1 &6660380855939762199
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 2655717821750667665}
-  _category: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
+  _categoryData: {fileID: 11400000, guid: 73eabb06e36297f42bbb07bd53c6832c, type: 2}
 --- !u!1 &8618435527810320139
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,4 +532,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 7796738572465263422}
-  _category: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}
+  _categoryData: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}

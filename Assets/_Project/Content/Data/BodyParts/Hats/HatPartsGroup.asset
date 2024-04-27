@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca883c7f9df84b2d855de7eb34d92351, type: 3}
   m_Name: HatPartsGroup
   m_EditorClassIdentifier: 
-  _bodyPartCategory: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}
+  _bodyPartCategoryData: {fileID: 11400000, guid: bfaaf974cc326d4448151800b80f53b6, type: 2}
   _bodyPartsData:
   - {fileID: 11400000, guid: 7485673e0a0847242a56f797eaaa64fc, type: 2}
   - {fileID: 11400000, guid: ad4bd252c31808441baedd13e861f05f, type: 2}
